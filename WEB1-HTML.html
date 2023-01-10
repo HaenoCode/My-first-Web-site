@@ -1,0 +1,238 @@
+<!doctype html>
+<html>
+<head>
+    <title>WEB1-HTML of Titanomachia</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+<h1><a href="index.html">Home</a>
+    <a href="WEB1-HTML.html">HTML</a>
+    <a href="WEB1-CSS.html">CSS</a>
+    <a href="WEB1-Javascript.html">Javascript</a></h1>
+<h1>-------------------------------------------------------------------------</h1>        
+<h1>&lt;&lt;HTML&gt;&gt;</h1>
+<a href="https://www.w3.org/TR/2011/WD-html5-20110405/" target="_blank" 
+title="HTML5 specification">
+HTML(HyperText Markup Language)</a> is the standard markup language 
+for <strong>creating <u>web</u> pages</strong> and web applications.
+<h2>I. HTML의 구성요소</h2>
+<h3>1. 요소(Elements)</h3>
+    - 시작태그부터 종료태그까지 이루어진 모든 것을 총칭한 한 단위.
+<h3>2. 태그(Tag)</h3>
+    - 요소의 처음(시작 태그)과 끝(종료 태그)을 알리는 것.<br>
+    - 종료 태그가 없는 것도 있다
+<h3>3. 속성(Attributes)</h3>
+    - 시작 태그 안에서 사용하며, 좀 더 구체화된 명령을 할 때 사용.
+<h3>4. 변수(Arguments)</h3>
+    - 속성에서 특정한 값을 지정하는 것.
+<h3>5. 요소의 구성 방법</h3>
+    - <시작 태그 속성 = "변수"> 여기에 내용이 들어값니다 <종료태그>
+<h4>*예시</h4>
+    <p align="center">태그에 속성을 부여하면 태그의 성격을 좀 더 구체화 시킵니다.</p>
+
+<h2>II. 기본 문법 태그</h2>
+<h3>1. h1 ~ h6 태그 : 제목이나 타이틀 작성시 사용</h3>
+<h4>*예시</h4>
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+<h3>2. strong 태그 : 내용을 강조하기 위해 글씨를 굵게할 때 사용</h3>
+<h4>*예시</h4>
+    기본 글씨 <strong>굵은 글씨 (strong 태그 적용)</strong>
+<h3>3. u 태그 : underline의 약자, 밑줄을 표시할 때 사용</h3>
+<h4>*예시</h4>
+    기본 글씨 <u>밑줄글씨 (u태그 적용)</u>
+<h3>4. br 태그 : 줄바뀜에 사용. 종료 태그가 없다. br하나당 한줄씩 바뀐다.</h3>
+<h4>*예시</h4>
+    br태그가 없는 경우는 따로 줄이 바뀌지 않고 계속해서 글이 나열됩니다.
+    하지만 br 태그를 사용하면 줄이 바뀐다.<br>br 태그를 연속해서 사용하면
+    갯수만큼 줄을 바꾼다.<br>
+    br 태그 1개 쓴 경우<br>
+    br 태그 2개 쓴 경우<br><br>
+    br 태그 3개 쓴 경우<br><br><br>
+<h3>5. p 태그 : paragraph의 약자. 단락(문단)을 나타낼 경우 사용.</h3>
+<h4>*예시</h4>
+    지금 이것은 p 태그 예를 들기 위해서 작성한 문단입니다.
+    이 문단은 p태그를 사용하지 않았기 때문에 단락이 나누어 지지 않고 
+    문장이 연속해서 작성되고 있습니다.
+    엔터를 쳐서 문장을 나누어도 실제로는 적용이 되고 있지 않습니다.
+    <p>지금 이것은 p 태그 예를 들기 위해서 작성한 문단입니다.
+       이 문단은 p태그를 사용하고 있기 때문에 위쪽
+       문단과 단락이 나누어 진것을 확인할 수 있습니다.</p>
+    <p>이 p 태그는 단락간의 간격이 고정되어 있어 br태그처럼 간격 조정이 힘듭니다.
+    그래서 따로 CSS와 같은 속성, 변수 값을 따로 설정해 주는 방법을 통해서 
+    간격을 조정할 수 있습니다.</p>
+<h4>*단락 간의 간격을 조정하는 예시</h4>
+    <p>이 단락은 첫번째 단락입니다. 본 예시는 첫번 째 단락과 두번 째 단락의 간격을 
+       50px로 조정하여 나타낼 것입니다.</p>
+    <p style="margin-top:100px;">이 단락은 윗 첫번 째 단락과 100px 간격을 띄우고
+       만든 두번 째 단락입니다. 
+       방법은 시작태그에서 다음과 같은 속성과 변수를 부여하면 됩니다.</p>
+    <p align="center"> &lt;p style="margin-top:50px;"&gt;</p>
+
+<h2>III. HTML이 중요한 이유</h2>
+<h3>1. 검색 엔진은 차별적이다.</h3>
+    - 검색 엔진은 우선적으로 선호하는 태그가 있다.
+      제목 태그가 다른 것보다 선호.<br> 
+    - 이미지화 된 텍스트는 검색 엔진이 내용을 알 수 없다.<br>
+    <h3>내용은 같지만 태그가 다르다. => h3 태그 사용 </h3>
+    <p><b><span style="font-size:19px">내용은 같지만 태그가 다르다.
+     => span style 태그 사용</span></b></p>
+
+<h2>IV. 이미지 삽입 태그 : img </h2>
+<h3>1. img는 단독으로 사용할 수 없다.</h3>
+    - img태그는 속성과 변수를 사용하여 표현.
+<h3>2. src : 이미지의 출처를 입력한다.</h3>
+    - src는 soure의 약자<br>
+    - src="이미지 주소"
+<h3>3. width : 이미지의 크기(폭)를 정한다.</h3>
+    - width="10px" 또는 width="100%"<br>
+<h4>*예시</h4> 
+<img src="html_fig1.jpg" width="100%">
+
+<h2>V. 부모태그와 자식태그 & 목록</h2>
+<h3>1. 태그들 간에는 계층 구조를 가질 수 있다.</h3>
+- 항상 계층구조를 가질 필요는 없다.<br>
+<h3>2. 계층 구조를 가지는 태그 : li, ul, ol</h3>    
+<h4>1) 상위 카데고리가 구분 안되는 경우</h4>
+<li>HTML</li>
+<li>CSS</li>
+<li>Javascript</li>
+<li>철수</li>
+<li>희영</li>
+<li>길동</li>
+<h4>2) 상위 카데고리가 구분 되는 경우 : 부모태그인 ul태그 사용</h4>
+<ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>Javascript</li>
+</ul>
+<ul>
+    <li>철수</li>
+    <li>희영</li>
+    <li>길동</li>
+</ul>
+<h4>3) 상위 카데고리가 구분 되는 경우 : 부모태그인 ol태그 사용</h4>
+<ol>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>Javascript</li>
+</ol>
+<ol>
+    <li>철수</li>
+    <li>희영</li>
+    <li>길동</li>
+</ol>
+<h3>3. 3계층 구조를 가지는 태그  : table, tr, td</h3>
+<table>
+    <tr>
+        <td>순위</td>
+        <td>태그</td>
+        <td>비율(%)</td>
+    </tr>
+    <tr>
+        <td>1등</td>
+        <td>head</td>
+        <td>98.1</td>
+    </tr>
+    <tr>
+        <td>2등</td>
+        <td>body</td>
+        <td>97.9</td>
+    </tr>
+    <tr>
+        <td>3등</td>
+        <td>html</td>
+        <td>97.5</td>
+    </tr>
+    <tr>
+        <td>4등</td>
+        <td>h1</td>
+        <td>95</td>
+    </tr>
+</table>
+
+<h2>VI. 웹문서의 기본 구조 및 슈퍼스타 태그들</h2>
+<h3>1. &lt;!doctype html&gt; 태그 - 관용적 태그</h3>
+- 가장 먼저 사용하는 태그로서 관용적으로 이 문서는 html 문서임을 알리는 표현
+<h3>2. &lt;html&gt; &lt;/html&gt; 태그 - 최상위 태그</h3>
+- html 문서의 앞과 끝을 표시하는 태그
+<h3>3. &lt;head&gt; &lt;/head&gt; 태그 - 상위 태그</h3>
+    1) 이 문서의 본문을 설명하는 부분.<br>
+    2) &lt;title&gt; 제목 &lt;/title&gt;<br>
+    - 웹페이지 문서의 전체 제목을 표현하는 것으로
+    웹 브라우저 탭에 표시되는 내용이다.<br>
+    3) &lt;meta charset="utf-8"&gt; 태그<br>
+    - 이 문서는 utf-8 형식으로 작성되었다는 것을 의미하며,
+    이 부분이 있어야 웹브라우저가 utf-8 형식을 읽어들일 수 있다.
+<h3>4. &lt;body&gt;본문의 내용&lt;/body&gt; 태그 - 상위태그</h3>
+    1) 본문를 나타내는 태그 - 본문 앞 뒤로 묶는다.<br>
+
+<h2>VII. HTML 태그의 제왕 - &lt;a&gt;</h2>
+<h3>1. &lt;a&gt;&lt;/a&gt; 태그</h3>
+    1) 웹사이트 최고의 특징은 여러 페이지간의 링크(Hypertext)<br>
+    2) 링크를 거는 태그로서, anchor의 약자<br>
+    3) &lt;a&gt; 태그 단독으로 사용하기 어렵기 때문에 다양한 속성과 함께 사용
+<h3>2. &lt;a&gt;태그의 속성들</h3>
+    1) href="링크주소"<br>
+    - hyper reference의 준말로서, 링크 걸 주소를 표시함<br>
+    2) target="_blank"<br>
+    - 링크된 페이지를 새 탭으로 여는 것.<br>
+    - 이 속성을 사용하지 않으면 그 페이지가 바뀜.<br>
+    3) title="설명"<br>
+    - 링크에 마우스 커서을 갖다대면 나타나는 설명
+<h4>* &lt;a&gt; 태그 사용 예시</h4>
+&lt;a href="링크주소" target="_blank" title="설명 박스 내용"&gt;
+링크거는 내용 &lt;/a&gt;
+
+<h2>VIII. 웹사이트(Web site)의 완성</h2>
+<h3>1. Website의 정의</h3> 
+    <a href="https://en.wikipedia.org/wiki/Website" target="_blank">
+    A website (also written as a web site)</a> is a collection of web pages
+    and related content that is identified by a common domain name and
+    published on at least one web server.
+<h3>2. 본 사이트의 구성 예시</h3>
+    - index.html(홈화면 페이지), WEB1-HTML.html(HTML 학습에 관한 내용 페이지),
+    WEB2-CSS.html(CSS 학습에 관한 내용 페이지), WEB2-Javascript.html
+    (Javascript 학습에 관한 내용 페이지) 등을 링크를 통해서 서로 연결해 놓음.
+
+<h2>IX. 웹의 역사와 원시웹</h2>
+<h3>1. 1960년대 : 인터넷 개발</h3>
+- 군부대, 정보 기관 등 일부 강대국에서 보안 목적으로 <strong>인터넷</strong>을
+개발하여 서로 통신을 함 
+<h3>2. 1990년대 : 웹의 개발 및 인터넷 발달</h3>
+<p>1) 웹의 탄생<br>
+- 1980년대 : 영국 컴퓨터과학자 팀 버너스 리(Tim Berners-Lee)가 스위스 제네바의
+유럽입자물리연구소(CERN)에 입사한 후 Enquire라는 프로그램 개발 및 업데이트 하면서
+웹의 전신에 해당하는 프로그램을 만듦<br>
+- 1990년대 : CERN에 인터넷이 도입됨<br>
+- 1990년 10월 : 세계 최초의 웹페이지 편집기 개발<br>
+- 1990년 11월 : 세계 최초의 웹브라우저(World Wide Web) 개발<br>
+- 1990년 12월 24일 : 웹 서버 프로그램 구축 및 주소 명명</p>
+<p>2) 최초의 원시웹
+<h4><a href="http://info.cern.ch/" target="_blank">info.cern.ch/</a> &lt;= 최초의 원시웹</h4></p>
+
+<h2>X. 서버와 클라이언트</h2>
+<h3>1. Server(서버)</h3>
+- 웹 서비스를 제공하는 컴퓨터
+<h3>2. Client(클라이언트)</h3>
+- 웹 브라우저를 통해서 웹 서비스의 정보를 제공 받는 컴퓨터
+<h3>3. 작동 원리</h3>
+<p> 1) <strong>Web Server</strong>는 <strong>주소</strong>를 갖는다.(ex. http://info.cern.ch)<br>
+    2) Web Server의 저장공간에 index.html 파일를 저장해 놓는다.<br>
+    3) <strong>Web Client(Browser)</strong>의 주소창에 주소를 입력한다.<br>
+    4) 전기적 신호를 인터넷을 통해 보내 주소에 해당하는 Server 컴한테 요청하면<strong>(Request)</strong><br>
+    5) Web Server 컴은 index.html 파일을 찾아서 전기적 신호로 변환하여 Client로 보낸다<strong>(Response)</strong><br>
+    6) Web Browser는 받은 전기적 신호를 해석하여 화면에 표시한다. 
+</p>
+<h3>4. 웹 서비스 제공 방법</h3>
+<p> 1) Web Server 구축 - 직접 컴퓨터에 server 프로그램 설치<br>
+    2) Web Hosting - 웹 서비스 업체를 이용하는 방법
+</p>
+
+</body>
+</html>
