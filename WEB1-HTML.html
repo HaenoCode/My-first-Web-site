@@ -233,6 +233,95 @@ for <strong>creating <u>web</u> pages</strong> and web applications.
 <p> 1) Web Server 구축 - 직접 컴퓨터에 server 프로그램 설치<br>
     2) Web Hosting - 웹 서비스 업체를 이용하는 방법
 </p>
+<h2>XI. 웹 호스팅</h2>
+ - 웹 서비스를 대행해주는 업체를 이용하는 방법이 있다.<br>
+ - 대표적인 무료 사이트 2개를 소개한다. 
+<h3><a href="https://github.com" target="_blank">1. github.com</a></h3>
+<p>
+    1) 회원가입(sign up) 및 로그인(sign in)<br>
+    2) New Repository 생성(이름, 공개여부)<br>
+    3) Upload files<br>
+    (*** 반드시 <strong>index.html파일을 포함하여 파일 자체</strong>를 올린다. 폴더를 올리면 안된다.)<br>
+    4) Build and Deploy<br>
+    - Settings => Pages => Branch(main) => Save<br>
+    5) URL 주소 확인 : https://username.github.io/repository name<br>
+    6) 파일 수정 후 재 업로드 방법<br>
+    - Code => Add file => upload files ===> 자동으로 Deploy 됨
+</p>
+<h3><a href="https://netlify.com" target="_blank">2. netlify.com</a></h3>
+<p>
+    1) 회원가입 및 로그인<br>
+    2) New Site 만들기 및 폴더 업로드<br>
+    - Sites => New site => Drag a folder<br>
+    (*** 반드시 <strong>index.html파일을 포함한 폴더</strong>를 올린다. github와 다른점이다.)<br>
+    3) Deploy : 따로 작업이 필요없이 폴더 업로드 한 후 조금 지나면 deploy됨<br>
+    4) URL 주소 변경<br>
+    - Site Overview => site settings => change site name<br>
+    - https://sitename.netlify.app<br>
+    5) 수정 후 재 업로드 방법<br>
+    - Deploys메뉴 => 수정 폴더 업로드
+</p>
+<h2>XI. 웹 서버 운영</h2>
+- Apache, VS code Live Server 등이 있음
+<h3>1. Visual Studio Code Live Server</h3>
+<p>1) VS Code 확장 기능에서 Live Server 설치<br>
+2) 하단에 Go Live 클릭해서 실행 => Port : 5500<br>
+3) http:// 127.0.0.1:5500<br>
+(*** 127.0.0.1은 자신의 컴을 가리키는 세계의 규약)<br>
+4) 확장 기능에서 IP Address 설치 => 컴 IP Address 확인 가능<br>
+5) 동일 네트워크 상에 있는 다른 컴퓨터에서 4)에서 알아낸 주소:5500으로 접속 가능
+</p>
+<h2>XII. 코드의 힘 - 동영상 삽입</h2>
+<h3>1. &lt;iframe&gt;&lt;/iframe&gt; 태그 - 동영상 삽입 태그</h3>
+- 동영상 파일 자체를 삽입하는게 아니라 동영상 소스 코드를 복사해서 사용가능<br><br>
+1) &lt;iframe width="너비사이즈" height="높이사이즈" src="소스 주소" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;<br>
 
+<iframe width="640" height="365" src="https://www.youtube.com/embed/7T7r_oSp0SE?list=PLuHgQVnccGMDZP7FJ_ZsUrdCGH68ppvPb" 
+title="WEB1 부록 - 코드의 힘 : 동영상 삽입" frameborder="0" allowfullscreen></iframe>
+
+
+<h2>XIII. 코드의 힘 - 댓글 기능 추가</h2>
+- 댓글 기능은 백엔드 언어로 작업하는 것이라서 너무 어렵다<br>
+- 댓글 서비스 업체를 이용하자<br>
+<h3><a href="http://disqus.com" target="_blank">1. Disqus.com</a></h3> 
+<p>
+
+    <div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://web1-titanomachia.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</p>
+<h3><a href="http://livere.com" target="_blank">2. LiveRe.com</a></h3>
+
+<h2>XIV. 코드의 힘 - 채팅 기능 추가</h2>
+<h3><a href="https://www.tawk.to" target="_blank">www.tawk.to</a></h3>
+- 실시간 채팅 및 상담 기능<br>
+- 가입해서 위젯 코드 복사해서 각 웹페이지 마다 추가
+
+<h2>XII. 코드의 힘 - 웹사이트 방문자 분석기</h2>
+<h3><a href="https://analytics.google.com" target="_blank">Analytics.google.com</a></h3>
+- Google Anlaytics 라는 서비스<br>
+- 코드 복사해서 웹페이지마다 &lt;head&gt; 부분에 추가
+<h1>-------------------------------------------------------------------------</h1>
+<h1><a href="index.html">Home</a>
+    <a href="WEB1-HTML.html">HTML</a>
+    <a href="WEB1-CSS.html">CSS</a>
+    <a href="WEB1-Javascript.html">Javascript</a></h1>
+<h1>-------------------------------------------------------------------------</h1>
 </body>
 </html>
