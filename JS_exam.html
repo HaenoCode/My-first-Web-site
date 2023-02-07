@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS exam</title>
+    
+<script>
+    let H2 = 
+    {
+        SetColor : function(color)
+        {
+        var h2list = document.querySelectorAll('h2');
+        var i = 0
+        while( i < h2list.length )
+            { h2list[i].style.color = color;
+            i = i + 1;
+            }
+        }
+    }
+    
+    /*
+    function H2SetColor(color)
+    {
+        var h2list = document.querySelectorAll('h2');
+        var i = 0
+        while( i < h2list.length )
+        { h2list[i].style.color = color;
+            i = i + 1;
+        }
+    }
+    */
+
+    let Body =
+    {
+        
+        SetColor : function(color)
+        {
+            document.body.style.color = color;
+        },
+        SetBackgroundColor : function(color)
+        {
+            document.body.style.backgroundColor = color;
+        }
+    }
+    /*
+    function BodySetColor(color)
+    {
+        document.body.style.color = color;
+    }
+    function BodySetBackgroundColor(color)
+    {
+        document.body.style.backgroundColor = color;
+    }
+    */
+    
+    function DayNightHandler(self)
+    {
+    if (self.value==='Night Mode')
+        {
+        Body.SetBackgroundColor('black');
+        Body.SetColor('white');
+        //BodySetBackgroundColor('black'); //document.body.style.BackgroundColor='black';
+        //BodySetColor('white'); // document.body.style.color='white';
+        self.value='Day Mode';
+        // var h2list = document.querySelectorAll('h2');
+        // var i = 0
+        // while( i < h2list.length)
+        // {h2list[i].style.color = 'yellowgreen'
+        //     i = i + 1;
+        // }
+        //=> 이 코드 대신에 function setColor를 사용한다.
+        //H2SetColor('yellowgreen');
+        H2.SetColor('aquamarine');
+        }
+    else
+        {
+        Body.SetBackgroundColor('white');
+        Body.SetColor('black');
+        //BodySetBackgroundColor('white'); // document.body.style.backgroundColor='white';
+        //BodySetColor('black');  //  document.body.style.color='black';
+        self.value='Night Mode';
+
+        // var h2list = document.querySelectorAll('h2');
+        // var i = 0
+        // while( i < h2list.length)
+        // {h2list[i].style.color = 'black'
+        //     i = i + 1;
+        // }
+        //=> 이 코드 대신에 function setColor를 사용한다.
+        //H2SetColor('black');
+        H2.SetColor('black');
+        } 
+    }  
+</script>
+
+</head>
+
+<body>
+    <h2>I. Script 태그의 사용 실습</h2>
+        <h3>1. HTML의 예시</h3>
+            Hello world   
+        <h3>2. JS의 예시</h3>
+        <script>
+            document.write('Hello world'); // script에서 주석 표시법 ( 주석 앞에서 // )
+        </script>
+        <h3>1. HTML의 예시</h3>
+            1+2 &lt;---- text 그대로 표시
+        <h3>2. JS의 예시</h3>
+        <script>
+            document.write(1+2); 
+        </script> &lt;---- 계산된 값이 표시
+
+    <h2>II. 이벤트 사용 실습</h2>
+
+        <h2><button onclick="alert('button 태그를 사용한 것으로 contents에 여러 태그를 추가할수 있다')"><b>CLICK</b></button></h2>
+
+        <h2><input type="button" value="CLICK" onclick="alert('input태그에 type=button으로 표현한 것')"></h2>
+
+        <h2><input type="button" value="Prompt" onclick="prompt('입력창이 나타납니다. 입력하세요')"></h2>
+
+        <h2><input type="text" onchange="alert('onchange이벤트 <--- 입력칸의 변화가 있을 때 반응함')"></h2>
+        
+        <h2><input type="text" onkeydown="alert('onkeydown이벤트 <--- 입력칸에 아무 키나 누르면 반응함')"></h2>
+
+    <h2>III. 데이터 타입 실습</h2>
+        <h3>1. Number(수) type</h3>
+        <span> 1+2= </span>
+        <script>
+        document.write(1+2+"<br>")
+        </script>
+        <span> 10-4 = </span>
+        <script>
+        document.write(10-4+"<br>")
+        </script>
+        <span> 3*7= </span>
+        <script>
+        document.write(3*7+"<br>")
+        </script>
+        <span> 1124/4= </span>
+        <script>
+        document.write(1124/4+"<br>")
+        </script>
+        <p> ( + , - , * , / ) ====> 산술연산자(of 이항연산자)라고 한다</p>
+        <h3>2. String(문자열) type</h3>
+        <script>
+        document.write("abc")
+        </script>
+        ====> 문자열은 script 내에서는 "abc"라고 쓰지만 실제 출력은 abc 로 된다<br>
+        <script>
+        document.write('"abc"')
+        </script>
+        ====> 문자열은 script 내에서는 '"abc"'라고 하면 실제 출력은 "abc" 로 된다<br>
+        <script>
+        document.write("'abc'")
+        </script>
+        ====> 문자열은 script 내에서는 "'abc'"라고 하면 실제 출력은 'abc' 로 된다<br>
+        <script>
+        document.write("이문장의글자수".length)
+        </script>
+        ====> "이문장의글자수".length 라는 property 사용하면 글자수를 알아낸다   
+        <h3>3. 변수와 대입연산자</h3>
+        <script>
+        var x = 'test'
+        document.write("fjdkfjsalk x fdfsf"+ "<br>")
+        document.write("fjdkfjsalk " + x + " fdfsf"+"<br>")
+        </script>
+        ====> 이문장에서 변수 x는 test로 바뀌었다
+
+    <h2>IV. 제어할 태그 선택하기 실습</h2>
+        <h3>1. Day-Night 버튼 실습</h3>
+        <input type="button" value="Night Mode" onclick="
+        document.body.style.backgroundColor= 'black';    
+        document.body.style.color='white';
+        ">
+        <!-- document.querySelector('body') 대신에 document.body 사용해도 무방한 것 같음 -->
+        <input type="button" value="Day Mode" onclick="
+        document.body.style.backgroundColor='white';
+        document.body.style.color='black';
+       ">
+        <h3>2. querySelector 실습</h3>
+ 
+        <p> black </p>
+        <p class="test2" id="test1" style="color:yellow"> yellow </p>
+        <p class="test2" id="test2" style="color:green">green</p>
+        <p class="test" id="test3" style="color:red">red</p>
+        <p class="test" id="test4" style="color:blue">blue</p>
+        
+        <script>
+        var x= document.querySelectorAll(".test");
+        var y= document.querySelectorAll(".test2");
+        y[1].style.color = x[1].style.color;
+        y[0].style.color = x[0].style.color;
+        </script>
+
+    <h2>VII. Comparison Operator(비교 연산자) & Boolean</h2>
+    <h3>1. 비교연산자(===)</h3>
+        <script>
+        document.write('1===1에 대한 값 : ')
+        document.write(1===1)
+        </script><br>
+        <script>
+        document.write('1===2에 대한 값 : ')
+        document.write(1===2)
+        </script><br>
+        <script>
+        document.write('1==="1"에 대한 값 : ')
+        document.write(1==="1")
+        </script>
+    <h3>2. 비교연산자(&lt;&gt;)</h3>
+        <script>
+        document.write('1<2에 대한 값 : ')
+        document.write(1<2)
+        </script><br>
+        <script>
+        document.write('1>2에 대한 값 : ')
+        document.write(1>2)
+        </script>
+    <h3>3. 비교연산자(==)</h3>
+        <script>
+        document.write("1=='1'에 대한 값 : ")
+        document.write(1=='1')
+        </script><br>
+        <script>
+        document.write("1=='2'에 대한 값 : ")
+        document.write(1=='2')
+        </script>
+
+    <h2>VIII. 조건문 실습</h2>
+    <h3>1. if 문</h3>
+    <script>
+        if(3<4){ document.write("3<4이 True이면 True라고 표시한다") }
+    </script>
+    <h3>2. if - else 문</h3>
+    <script>
+        if(3>4){ document.write("3>4이 True이면 True라고 표시한다") }
+        else {document.write("3>4이 false이면 false라고 표시한다")}
+    </script>
+    <h3>3. if - else if - else 문</h3>
+    <input type="text" id="testnumber" onchange=" 
+        var tn = document.querySelector('#testnumber').value
+        if(tn>=100){ alert('세 자리 이상의 수입니다') }
+        else if (tn>=10){ alert('두 자리 수입니다')}
+        else { alert('한 자리 수입니다')}
+        ">
+        ===> 자연수를 입력해보시오<br>
+    <h3>4. 조건문 활용 실습 - toggle 버튼</h3>
+    <input id="night_day" type = "button" value="Night Mode" onclick="
+     if (document.querySelector('#night_day').value==='Night Mode'){
+        document.body.style.backgroundColor='black';
+        document.body.style.color='white';
+        document.querySelector('#night_day').value='Day Mode'
+     }
+    else {
+        document.body.style.backgroundColor='white';
+        document.body.style.color='black';
+        document.querySelector('#night_day').value='Night Mode'
+    }    
+    ">
+
+    <h2>IX. 리팩토링 - 중복의 제거</h2>
+    <!--
+    <input type = "button" value="Night Mode" onclick="
+    if (document.querySelector('#night_day').value==='Night Mode'){
+        document.body.style.backgroundColor='black';
+        document.body.style.color='white';
+        document.querySelector('#night_day').value='Day Mode'
+    }
+    else {
+        document.body.style.backgroundColor='white';
+        document.body.style.color='black';
+        document.querySelector('#night_day').value='Night Mode'
+    }    
+    ">
+    ==> document.querySelector('#night_day')는 자기 자신을 나타내므로 this로 간단하게 표현가능
+    --> 
+    <input type = "button" value="Night Mode" onclick="
+     if (this.value==='Night Mode'){
+        document.body.style.backgroundColor='black';
+        document.body.style.color='white';
+        this.value='Day Mode';
+     }
+    else {
+        document.body.style.backgroundColor='white';
+        document.body.style.color='black';
+        this.value='Night Mode';
+    }    
+    ">
+    
+    <h2>X. 배열(Array) 기본 실습</h2>
+    <h3>1. Create an Array</h3>
+    <script>
+        var arr=['첫번째 요소이면서 인덱스값이 0입니다','두번째 요소이면서 인덱스값은 1입니다', '세번째 요소이면서 인덱스값은 2입니다']
+        document.write("[" + arr[0] + ", ");
+        document.write(arr[1] + ", ");
+        document.write(arr[2] + "]");
+    </script>
+    <h3>2. Change an Array</h3>
+    <script>
+        var arr=['첫번째 요소이면서 인덱스값이 0입니다','두번째 요소이면서 인덱스값은 1입니다', '세번째 요소이면서 인덱스값은 2입니다']
+        arr[1] = '두번째 요소는 변경되었습니다'
+        document.write("[" + arr[0] + ", ");
+        document.write(arr[1] + ", ");
+        document.write(arr[2] + "]");
+    </script>
+    <h3>3. Add an Array</h3>
+    <script>
+        var arr=['첫번째 요소이면서 인덱스값이 0입니다','두번째 요소이면서 인덱스값은 1입니다', '세번째 요소이면서 인덱스값은 2입니다']
+        arr[1] = '두번째 요소는 변경되었습니다'
+        arr.push('arr.push()는 가장 마지막에 요소를 추가하는 methods입니다')
+        document.write("[" + arr[0] + ", ");
+        document.write(arr[1] + ", ");
+        document.write(arr[2] + ", ");
+        document.write(arr[3] + "]");
+    </script>
+    <h3>4. Array.length</h3>
+    <script>
+        var arr=['첫번째 요소이면서 인덱스값이 0입니다','두번째 요소이면서 인덱스값은 1입니다', '세번째 요소이면서 인덱스값은 2입니다']
+        arr[1] = '두번째 요소는 변경되었습니다'
+        arr.push('arr.push()는 가장 마지막에 요소를 추가하는 methods입니다')
+        document.write("[" + arr[0] + ", ");
+        document.write(arr[1] + ", ");
+        document.write(arr[2] + ", ");
+        document.write(arr[3] + "]<br>");
+        document.write("이 arr의 요소개수는 " + arr.length);
+    </script>
+
+
+    <h2>XI. 반복문(Loop) 실습</h2>
+    <h3>1. while 문</h3>
+    <script>
+        var i = 0
+        while (i<3) {
+            document.write("총 3번 반복" + "<br>");
+            i = i + 1;
+        }
+    </script>
+    <h3>2. 배열과 반복문</h3>
+    <ol>
+    <script>
+        var WEB = ['Index','WEB1-HTML','WEB2-CSS','WEB2-Javascript']
+        var i = 0
+        while( i<WEB.length ) {
+        document.write('<li><a href="' + WEB[i] + '.html" target="_blank">'
+                        + WEB[i] + '</a></li>' );
+        i = i + 1
+        } 
+    </script>
+    </ol>
+    <h3>3. 배열과 반복문 활용 실습</h3>
+    <input type = "button" value="Night Mode" onclick="
+    if (this.value==='Night Mode')
+    {
+        document.body.style.backgroundColor='black';
+        document.body.style.color='white';
+        this.value='Day Mode';
+
+        var h2list = document.querySelectorAll('h2');
+        var i = 0
+        while( i < h2list.length)
+        {h2list[i].style.color = 'yellowgreen'
+            i = i + 1;
+        }
+    }
+    else
+    {
+        document.body.style.backgroundColor='white';
+        document.body.style.color='black';
+        this.value='Night Mode';
+
+        var h2list = document.querySelectorAll('h2');
+        var i = 0
+        while( i < h2list.length)
+        {h2list[i].style.color = 'black'
+            i = i + 1;
+        }
+    }    
+    ">
+ 
+    <h2>XII. 함수(function)</h2>
+    <h3>1. 함수의 기본</h3>
+    <script>
+        function sum(a,b) {
+            return a + b ;    
+        }
+    
+        function s(c,d) {
+            document.write('sum('+ c +','+ d + ')=' + sum(c,d) + '<br>' ); 
+        }
+        s(10,4)
+        s(120,34)
+        document.write(sum(10,4));
+        document.write('<div style="color:red">' + sum(10,4) + '</div>');
+        document.write('<div style="font-size:3rem">' + sum(10,4) + '</div>');
+    </script>
+    
+    <h3>2. 함수의 활용</h3>
+    <input type = "button" value="Night Mode" onclick="
+    DayNightHandler(this)  
+    // 아래 실행문을 head태그부분에서 함수로 정의하여 간단하게 표현
+       
+    // if (this.value==='Night Mode')
+    // {   document.body.style.backgroundColor='black';
+    //     document.body.style.color='white';
+    //     this.value='Day Mode';
+    
+    //     var h2list = document.querySelectorAll('h2');
+    //     var i = 0
+    //     while( i < h2list.length)
+    //     {h2list[i].style.color = 'yellowgreen'
+    //         i = i + 1;
+    //     }
+    // }
+    // else
+    // {   document.body.style.backgroundColor='white';
+    //     document.body.style.color='black';
+    //     this.value='Night Mode';
+    
+    //     var h2list = document.querySelectorAll('h2');
+    //     var i = 0
+    //    while( i < h2list.length)
+    //    {h2list[i].style.color = 'black'
+    //       i = i + 1;
+    //    }
+    // }    
+    ">
+    <h2>XIII. 객체(Object)</h2>
+    <h3>1. 객체 생성 및 읽기</h3>
+    <script>
+        // 객체 생성
+        let person = {
+            "firstname":"John", "lastname":"Doe", "age": 50, 
+        };
+        // 객체 접근(읽기)
+        // person.firstname
+        // person.lastname
+        // person["age"]
+        document.write("firstname : "+ person.firstname + "<br>");
+        document.write("lasttname : "+ person.lastname + "<br>");
+        document.write("age : "+ person["age"] + "<br>");
+    </script>
+    
+    <h3>2. Property 추가 및 삭제 및 존재 확인</h3>
+    <script>
+        // property 추가
+        person.eyecolor="blue";         // 객체.key = value ; 방식으로 추가
+        person["hair color"] = "brown"; // 객체["key"] = value; 방식으로 추가
+
+        document.write("<h4>1) 추가</h4>");
+
+        document.write("firstname : "+ person.firstname + "<br>");
+        document.write("lasttname : "+ person.lastname + "<br>");
+        document.write("age : "+ person["age"] + "<br>");
+        document.write("eyecolor : "+ person.eyecolor + "<br>");
+        document.write("hair color : "+ person["hair color"] + "<br>");
+
+        // property 삭제
+        delete person.age;
+
+        document.write("<h4>2) 삭제</h4>");
+
+        document.write("firstname : "+ person.firstname + "<br>");
+        document.write("lasttname : "+ person.lastname + "<br>");
+        document.write("age : "+ person["age"] + "<br>");
+        document.write("eyecolor : "+ person.eyecolor + "<br>");
+        document.write("hair color : "+ person["hair color"] + "<br>");
+
+        // property 존재 확인 
+        document.write("<h4>3) 존재 확인</h4>");
+
+        document.write("'age' in person : ");
+        document.write('age' in person); // 'age' in person
+        document.write("<br>");
+        document.write("'firstname' in person : ");
+        document.write('firstname' in person); // 'firstname' in person
+               
+    </script>
+
+    <h3>3. 객체와 반복문 - for ... in Loop 문</h3>
+    <script>
+        // 객체의 property key 들이 순차적으로 return
+        document.write("1) 객체의 property의 key들이 순차적으로 return"+ "<br>");
+        for (let keyperson in person)
+        {
+           document.write(keyperson + "<br>");
+        }
+        //  객체의 Property key value을 순차적으로 표현하는 방법
+        document.write("2) 객체의 property의 key value가 순차적으로 return"+ "<br>");
+        for (let value in person)
+        {
+            document.write(person[value] + "<br>"); // 객체[ ]
+        }
+        // 객체의 key와 Value가 함꼐 순차적으로 표현하는 방법
+        document.write("3) 객체의 property의 key와 value가 순차적으로 return"+ "<br>");
+        for (let keyvalue in person)
+        {
+            document.write(keyvalue +" : "+ person[keyvalue] + "<br>");
+        }
+
+    </script>
+
+    <h3>4. 객체의 Method와 this</h3>
+    <script>
+        // 새로운 객체인 Mike를 생성하면서 showAll이란 함수를 method로 입력한다
+        document.write("1) 새로운 객체인 Mike를 생성하면서 showAll이란 함수를 method로 입력한다" + "<br>");
+        let Mike =
+        {
+            sex : "남성",
+            age : 40,
+            job : "engineer",
+            showAll : function()
+            {
+                document.write("Mike의 성별은 " + Mike.sex + "입니다" +"<br>");
+                document.write("Mike의 나이는 " + Mike.age + "입니다" +"<br>");
+                document.write("Mike의 직업은 " + Mike.job + "입니다" +"<br>");
+            },
+        }
+        Mike.showAll();
+        
+        // 새로운 객체인 Jane을 생성하면서 ShowAll이란 함수를 this를 이용하여 생성
+        document.write("2) 새로운 객체인 Jane을 생성하면서 showAll이란 함수를 this를 이용하여 method를 생성" + "<br>");
+        let Jane =
+        {
+            sex : "여성",
+            age : 30,
+            job : "teacher",
+        };
+        Jane.showAll = function()
+            {
+                document.write("Jane의 성별은 " + this.sex + "입니다" +"<br>");
+                document.write("Jane의 나이는 " + this.age + "입니다" +"<br>");
+                document.write("Jane의 직업은 " + this.job + "입니다" +"<br>");
+            }, // 이미 선언된 Jane 객체에 showAll method를 추가하는 과정
+        Jane.showAll();
+           
+    </script>
+
+    <h3>5. 객체의 활용</h3>    
+    <input type = "button" value="Night Mode" onclick="DayNightHandler(this)"> 
+
+<script>
+
+
+</script>
+ 
+
+</body>
+</html>

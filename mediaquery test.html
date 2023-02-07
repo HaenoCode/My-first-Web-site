@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media query Test</title>
+    <style>
+        
+        #media1 {
+            border: 10px solid green;
+            font-size: 60px;
+            background-color:yellow;
+        }
+
+        #media2 {
+            border: 5px solid red;
+            font-size : 40px;
+            background-color : skyblue; 
+        }
+        /* mediaquery 쓰는법*/
+        /* 스크린 크기(width)가 900px보다 크면 사라지게 한다*/
+        @media(min-width:900px) 
+        {
+            #media1 {
+                display:none;
+            }
+        }
+    
+        /* screen width > 600px 이면 나타난다 */
+        @media(max-width:600px)
+        {
+            #media2 {
+                display:none;
+            }
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+
+
+<div id="media1">
+    이 부분은 화면 크기가 900px보다 커지면 사라집니다
+</div>
+<div id="media2">
+    이 부분은 화면 크기가 600px 이상이면 나타납니다
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>

@@ -1,0 +1,518 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>WEB2-Javascript of Titanomachia</title>
+    <link rel="stylesheet" href="style.css">  <!-- 이 부분은 external style sheet를 사용하겠다는 말 -->
+<!--<style>
+        body {
+            margin:0px;
+        }
+        /* CSS 주석 문법 */
+        #고유선택자 {color:red;}
+        .예시 {color:blue; font-size:18px;}
+        .선택자 {font-style: italic;} 
+        a {color:green;}
+        h1 {font-size:35px;}
+        h2 {font-size:30px;}
+        h3 {font-size:25px;}
+        h4 {font-size:20px;}  
+        img {width:640px;}
+        #title {
+            font-size:45px;
+            text-align: center;
+            margin:0px;
+            padding:10px;
+            border-bottom : 1px solid gray;
+        }
+        #grid1 {
+            display:grid;
+            grid-template-columns: 180px 1fr;
+        }      
+        #grid1 ol {
+            border-right: 1px solid gray;
+            margin:0px;
+            padding-left: 50px;
+        }
+        #grid1 .article {
+            padding-left:20px;
+        }
+        .list1 {
+            margin:0px;
+            padding:10px;
+            font:25px bold;
+        }
+        @media (max-width:860px) {
+            #grid1 {
+                display : block;
+            }
+            #grid1 ol {
+               border-right: none; 
+            }
+            .list1 {
+                font-size:20px ; 
+            }
+            #title {
+                font-size: 35px;
+                border-bottom : none;
+            }
+            h1 {font-size:30px;}
+            h2 {font-size:25px;}
+            h3 {font-size:20px;}
+            h4 {font-size:18px;}  
+            img {width:100%}
+        } 
+    </style> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> -->
+    <!-- 라이브러리의 가장 대표격인 jQuery에서 google에서 작성한 것을 위에 링크를 걸었다.  -->
+    <script src="colors.js"></script>
+</head>
+
+<body>
+
+<h1 id="title">WEB of Titanomachia</h1>
+
+<div id="grid1">
+    <ol>
+        <a class="list1" href="index.html" style="color:yellowgreen;"><li>Home</li></a>
+        <a class="list1" href="WEB1-HTML.html" style="color:red"><li>HTML</li></a>
+        <a class="list1" href="WEB2-CSS.html" style="color:blue"><li>CSS</li></a>
+        <a class="list1" href="WEB2-Javascript.html" style="color:brown"><li>Javascript</li></a>     
+        
+        <!--<a class="list1" href="index.html"><font color="black"><li>HOME</li></font></a>
+            <a class="list1" href="WEB1-HTML.html"><font color="red"><li>HTML</li></font></a>
+            <a class="list1" href="WEB2-CSS.html"><font color="blue"><li>CSS</li></font></a>
+            <a class="list1" href="WEB2-Javascript.html"><font color="brown"><li>JavaScript</li></font></a>
+        -->
+        
+    </ol>
+    <div class="article" id="JavaScript">
+        <h1>JavaScript</h1>
+        
+        <!-- <input type="button" value="Night" onclick=" 
+        document.querySelector('body').style.backgroundColor='black';
+        document.querySelector('body').style.color='white';
+        ">
+        <input type="button" value="Day" onclick="
+        document.querySelector('body').style.backgroundColor='white';
+        document.querySelector('body').style.color='black';
+        "> -->
+        
+        <!-- <input type="button" value="Night_Mode" onclick="
+        if(this.value==='Night_Mode'){
+        document.querySelector('body').style.backgroundColor='black';
+        document.querySelector('body').style.color='white';
+        this.value = 'Day_Mode';
+        
+        var alist = document.getElementsByClassName('article')[0].querySelectorAll('a');
+        var i = 0;
+        while(i < alist.length){
+            alist[i].style.color = 'yellow';
+            i = i + 1;
+        }
+        }
+        else {
+        document.querySelector('body').style.backgroundColor='white';
+        document.querySelector('body').style.color='black';
+        this.value = 'Night_Mode';
+        
+        var alist = document.getElementsByClassName('article')[0].querySelectorAll('a');
+        var i = 0;
+        while(i<alist.length){
+            alist[i].style.color = 'coral';
+            i = i + 1;
+        }
+        }
+        "> -->
+        <input type="button" value="Night Mode" onclick="
+        DayNightHandler(this)">
+        
+        <div id="실습페이지"><h3><input type="button" value="JS 실습 페이지" onclick="window.open('JS_exam.html')"></h3></div>
+        <script>
+        var 실습페이지 = document.querySelector("#실습페이지").innerHTML    
+        </script>
+        <a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank"
+        title="Javascript의 정의">
+        JavaScript(often abbreviated as JS)</a> is a programming language
+        that is one of the core technologies of the World Wide Web, alongside HTML and CSS.<br>
+        As of 2022, 98% of websites use JavaScript on the client side for webpage behavior,
+        often incorporating third-party libraries.<br>
+        All major web browsers have a dedicated JavaScript engine to execute
+        the code on users' devices.
+        <p>JavaScript is a <strong>high-level</strong>, often just-in-time compiled language
+        that conforms to the ECMAScript standard.<br>
+        It has dynamic typing, prototype-based object-orientation,
+        and first-class functions.<br>
+        It is multi-paradigm, supporting event-driven, functional,
+        and imperative programming styles.<br>
+        It has <strong>application programming interfaces (APIs)</strong> for working
+        with text, dates, regular expressions, standard data structures,
+        and <strong>the Document Object Model (DOM)</strong>.</p>
+
+        <h2>0.JS란 무엇인가?</h2>
+        <h3>1. JS와 Web</h3>
+        <h4>1) HTML to <u>define the content</u> of web pages</h4>
+        <h4>2) CSS to <u>specify the layput</u> of web pages</h4>
+        <h4>3) JavaScript to <u>program the behavior</u> of web pages</h4>
+        <h3>2.JS의 역할</h3>
+        <h4>1) can change HTML content</h4>
+        <h4>2) can change HTML Attribute Value</h4>
+        <h4>3) can change HTML style (CSS)</h4>
+        <h4>4) can hide/show HTML elements</h4>
+        <h4>* 참고로 JavaScript(JS)와 Java는 서로 완전히 다른 언어입니다</h4>
+
+        <h2>I-1. HTML과 JS의 만남 : Script 태그</h2>
+        <h3>1. &lt;script&gt;&lt;/script&gt; 태그</h3>
+        <h4>1) JS를 쓰기 위해서 사용하는 태그</h4>
+        <h4>2) head section, body section 둘다 사용 가능</h4>
+        <h3>2. JS와 HTML의 차이</h3>
+        <h4>1) HTML은 contents 그대로 화면에 출력된다</h4>
+        <h4>2) JS은 논리적으로 계산이 가능한다</h4>
+
+        <h2>I-2. HTML과 JS의 만남 : 이벤트 </h2>
+        <p>- HTML event가 발생하면 => JavaSccript가 반응(react)</p> 
+        <h3>1. HTML events</h3>
+        <h4>1) HTML 웹페이지 로딩이 끝나자마자</h4>
+        <h4>2) HTML 입력란이 변화되자마자</h4>
+        <h4>3) HTML button이 클릭되자마자</h4>
+        <h3>2. JavaScript Reaction</h3>
+        <p> - JS code를 이용하여 다양한 명령을 내릴 수 있다.<br>
+            - 내용을 바꾼다거나, CSS를 변화한다거나 등등<br></p>
+        <h3>3. 문법</h3>
+        <p>- &lt;element event="JS 코드를 사용한다"&gt;</p>
+        <h3><a href="https://www.w3schools.com/js/js_events.asp" target="_blank4">4. Event의 종류</a></h3>
+            <img src="JS_fig1.jpg">
+
+        <h2>I-3. HTML과 JS의 만남 : Console</h2>
+        <p> - JS를 실행하는 또 다른 방법 중 하나.<br>
+            -  파일을 굳이 만들지 않고도 JS 문법을 실행시키는 툴<br>
+            - 브라우저 => 우클릭 => 검사 => Console 창 실행<br>
+            - 다양한 JS 명령어 실행가능함.<br></p>
+    
+        <h2>I-4. HTML과 JS의 만남 : 실습 예제</h2>
+        <p>- Javascript와 이벤트 실습은 <a href="JS_exam.html" target="_blank">HTML과 JS의 만남</a> 따로 만들었습니다</p>
+
+        <h2>II. 데이터 타입(자료형)</h2>
+        <h3>1. JS는 총 8가지 Data type</h3>
+        1) String(문자열) 2) Number(수) 3) Bibint 4) Boolean(불린)<br>
+        5) Undefined 6) Null 7) Symbol 8) Object(객체)<br>
+       <h3>2. Object datatype</h3>
+        1) An object            2) An array               3) A date
+       <h3>3. 대표적 자료형(1) : Strings</h3>
+        1) 문자 또는 문자의 나열<br>
+        2) quote(single, double 상관없다) 안에 문자를 쓴다<br>
+         - "문자", '문자'<br>
+        3) 같은 따옴표가 아니라면 따옴표 내에 다른 따옴표 쓸수 있다<br>
+         - '이 문장은 "문자열"입니다'<br>
+         - "이 문장에는 '작은 따옴표'를 쓸수 있습니다."<br>
+       <h3>4. 대표적 자료형(2) : Number</h3>
+        1) JS는 모든 수를 십진법으로 나타냄.<br> 
+        2) 소수점을 포함해도 되고, 그렇지 않아도 된다.<br>
+         - 34.00 , 34 등등<br>
+         3) 지수 표시 ( e )<br> 
+         - 123e5 = 12300000<br>
+         - 123e-3=0.123 (*중요: 소수점은 일반 지수처럼 계산되는 게 아니라, e-3은 총 소수점자리수가 3개라는 뜻)
+        <h3>4-1 Biglint</h3></h3>
+         - 특수한 수 자료형으로, 기존의 Number는 32-bit 타입이라서 너무나 큰 수를 표현할 수 없다.<br>
+         그래서 더 큰수를 표현하기 위해 64-bit 타입의  datatype이다. (ex. 12345678734320000000 )<br>
+         *** 중요 ***<br> 
+         문자와 숫자를 더할 경우, 무조건 앞에서부터 계산한다.<br>
+          - 16 + "Volvo" ;         ==> 16Volvo<br>
+          - "Volvo" + 16 ;         ==> Volvo16<br>
+          - 16 + 4 + "Volvo";   ==> 20Volvo<br>
+          - "Volvo" + 16 + 4;   ==> Volvo164<br>
+        <h3>5. 대표적 자료형(3) : Boolean</h3>
+        1) True, False 두가지의 값만 가지는 자료형<br>
+        2) 5 == 6    ==> False<br>
+        3) 조건문에서 많이 사용 <br>
+        <h3>6. 대표적 자료형(4) : Arrays</h3>
+        1) 여러 자료의 배열을 표현<br>
+        2) 대괄호[ ] 안에 콤마(,)로 나열한다<br>
+        3) cars = ["Saab", "Volvo", "BMW" ]<br>
+        <h3>7. 대표적 자료형(5) : Objects</h3>
+        1) 한국말로 '객체' - 객체라는 말은 어떤 행위가 미치는 대상을 의미<br>
+        2) 객체를 지정해놓으면, 나중에 편리하게 꺼내 쓸 수있다.<br>
+        3) object_name = {property1:value1, property2:value };<br>
+        <h3>8. 그 외 자료형(1) : Undefined</h3>
+        - value값이 정의되지 않은(undefined) 자료형<br>
+        <h3>9. 그 외 자료형(2) : null</h3>
+        - 자료형은 정해져있지만 값이 없는것<br>
+        <h3>10. 그 외 자료형(3) : date</h3>
+        - 날짜를 나타내는 자료형<br>
+        <h3>11. typeof Operator</h3>
+        - typeof : 그 자료형이 어떤 형인지 알수 있는 script 명령어<br>
+        - typeof "cars"  ==> string<br>
+
+        <h2>III. 변수와 연산자 </h2>
+        <h3>1. 변수(variable, var) : 변할수 있는 값.</h3> 
+        <h3>2. 대입연산자  :  = , 흔히 등호로 알고 있는 연산자.</h3>
+         X = "test"   ==> 이 말은 좌항의 변수(x)에 우항의 문자열(test)을 대입한다는 뜻.
+        <h3>3. 변수와 대입연산자를 이용해 다양한 값을 변형/대입 가능.</h3>
+
+        <h2>IV. 웹 브라우저 제어와 JS</h2>
+        <h3>1. HTML - 정적인 언어</h3>
+        - style이 한 번 정해지면 고정된다<br>
+        - 유저와 상황에 따라 변하하기 어렵다
+        <h3>2. JS - 동적인 언어</h3>
+        - 상황이나 이벤트를 이용하여 스타일 변경이 가능하다<br>
+        - 웹 브라우저 제어를 할 수 있다
+        
+        <h2>V. 제어할 태그 선택하기</h2>
+        <h3>1. document.querySelector("  S  " );<br>
+            document.querySelector("  S1   , S2 " );</h3>
+            => 1개 또는 여러개(콤마로 구분)의 Selector를 지정해서
+            그 Selector를 가진 <span class="imp">가장 첫번째 Element</span>가 선택(return)
+        <h3>2. document.querySelectorAll( "  S  " );<br>
+            document.querySelectorAll( "  S1, S2 " );</h3>
+           => 1개 또는 여러개(콤마로 구분)의 Selector를 지정해서
+            그 Selector를 가진 <span class="imp">모든 Element</span>가 <a href="https://www.w3schools.com/js/js_htmldom_nodelist.asp" target="_blank">*NodeList</a>로 return
+        <h3>3. getElementById("  ID " )<br>
+            getElementsByClassName(" Class " )<br>
+            getElementsByTagName(" Tag " )</h3>
+            => 1개의 name, class, id 로 지정해서 그 Selector를 가진 <span class="imp">모든 Elements</span>를
+            <a href="https://www.w3schools.com/js/js_htmldom_collections.asp" target="_blank">*HTML Collection</a>으로 return<br>
+
+        <script>
+            document.write(실습페이지)
+        </script>
+        
+        <h2>VI. Program & Programming.</h2>
+        <h3>1.Program의 본질적 의미</h3>
+        - 근대 이전의 유럽에서 오페라,연극과 같은 문화예술공연에서 <b>진행 목록이나 순서</b>를 의미하는 말로 쓰임<br>
+        - 즉, 계획된(ordered), 일련의(a series of) 의 의미가 내포되어 있음<br>
+        - 컴퓨터 Program은 어떤 문제를 해결하기 위해 그 처리 방법과 순서를 기술한 일련의 명령어 집합체<br>
+        <h3>2. HTML과 JS</h3>
+        - HTML은 단순히 웹에 표현하는 서술적인 언어이므로 program이 아니다<br>
+        - JavaScript(JS)는 일정한 조건과 규칙에 맞게 순서대로 실행되는 언어이므로 Prgramming Language이다
+
+        <h2>VII. 비교연산자와 불리언</h2>
+        <h3><a href="https://www.w3schools.com/js/js_comparisons.asp" target="_blank">1. Comparison Operator(비교연산자)</a></h3>  
+        - 두 개의 값의 상대적인 크기를 판단하여 참(True), 거짓(False)를 판단하는 연산자<br>
+        - 두 개의 값을 비교하므로, 이항연산자이다<br>
+        <img src="JS_fig2.jpg">
+        <h3>2. Boolean(불리언)</h3>
+        - 참(True) 또는 거짓(False)의 값만을 가지는 자료형<br>
+        - 항상 False인 경우 : 0,-0, empty, null, undefined, False<br>
+      
+        <h2>VIII. 조건문</h2>
+        <h3>1. Conditional Statements(조건문) - if, else </h3>
+        - 특정한 조건이 참일 경우와 거짓일 경우 각각 실행되는 명령이 다르게 하는 것<br>
+        1) if statement<br>
+        - if( 조건 ) { 조건이 참일 경우 실행되는 명령 }<br>
+        2) if-else statement<br>
+        - if( 조건 ) { 조건이 참일 경우 실행되는 명령 }<br>
+          else { 조건이 거짓일 경우 실행되는 명령 }<br>
+        3) if-else-if statement<br>
+        - if( 조건1 ) { 조건1이 참일 경우 실행되는 명령 }<br>
+          else if ( 조건2 ) { 조건1일 거짓, 조건2가 참일 경우 실행되는 명령 }<br>
+          else { 조건1, 조건2 모두 거짓일 때 실행되는 명령 }<br>   
+        <h3>2. 조건문의 활용 - toggle 버튼 만들기</h3>
+        
+        <script>
+            document.write(실습페이지)
+        </script>
+
+        <h2>IX. 리팩토링 - 중복의 제거</h2>
+        <h3>1. Refactoring(리팩토링)</h3>
+            - 결과의 변경 없이 코드의 구조를 재조정함<br>
+            - 중복 제거, 가독성 향상, 유지보수 편의성 향상 등을 목적으로 함<br>
+        <h3>2. 예시</h3> 
+            1) 자기 자신 태그를 의미할 경우  => this 사용 <br>
+            2) 반복되는 것 : 변수 지정해서 사용<br>
+
+        <h2>X. 배열(Array)</h2>
+        <h3>1. 배열(Array) - 여러 개의 값들의 수납함. 값들의 집합</h3>
+        - 배열을 구성하는 각각의 값을 배열요소(element)라고 한다
+        - index(인덱스) : 요소의 위치를 나타내는 값으로 첫번째 요소의 인덱스는 0이다. 순차적으로 1씩 증가한다. 
+        <h3><a href="https://www.w3schools.com/js/js_arrays.asp" target="_blank">2. Syntax</a></h3>
+            1) Create an Array<br>
+            - var 배열명 = [ 배열요소1, 배열요소2, 배열요소3, ... ]<br>
+            2) change an Array<br>
+            - 배열명[2] = 배열요소4  ==> 3번째 요소의 값을 배열요소4 로..<br>
+            3) Add an Array<br>
+            - 배열명.push(배열요소5);   ==> 가장 마지막에 배열요소5를 추가 <br>
+       <h3><a href="https://www.w3schools.com/js/js_array_methods.asp" target="_blank">3. 기타 Array  methods</a></h3>
+       
+       <h2>XI. 반복문(Loop)</h2>  
+       <h3>1. while ( 조건 ) { 조건이 True일 때까지 반복 실행하는 명령 }</h3>
+       - 조건이 항상 true가 되면 무한반복하기 때문에 반드시 종료되는 조건을 사용<br>
+       <h3>2. 배열과 반복문</h3>
+        1) 반복되는 값을 배열로 만들어 배열요소를 반복해서 사용<br>
+        2) 배열 요소 개수(length)만큼 반복해서 요소를 나열할 수 있다
+       <h3>3. 배열과 반복문 활용</h3>
+        - Night_Day toggle 버튼 전환시 특정 태그의 폰트 칼라를 바꿀 수 있다.<br>
+        *예시)<br>
+        var h2list = document.querySelectorAll('h2');<br>
+        var i = 0<br>
+        while ( i &lt; h2list.length  )<br>  
+        { h2list[i].style.color = 'yellowgreen';<br>
+         i = i + 1; }<br>
+        ===> h2 태그를 가진 요소들을 <a href="https://www.w3schools.com/js/js_htmldom_nodelist.asp" target="_blank">*NodeList</a>로 return
+        후, 인덱스 번호를 반복적으로 증가시키면서 각 배열요소(h2태그요소)에게 style 적용하는 방식 
+
+        <script>
+            document.write(실습페이지)
+        </script>
+
+        <h2>XII. 함수(function)</h2>
+        <h3>1.정의</h3>
+        1) 특정한 작업을 수행하기 위해 작성된 코드들의 블록<br>
+        2) 함수는 invocation(call) 호출될 때 수행한다<br>
+        3) 반복되는 코드를 한번만 정의한 후 함수를 이용해서 여러번 사용할 수 있게 하는 장점이 있다<br>
+        4) 같은 함수에 다양한 argument를 대입하여 다양한 결과를 얻을 수 있다<br>
+        <h3>2.syntax</h3>
+        1) function Declaration<br>
+        function function_name ( parameter1, parameter2, ...){ code to be executed }<br>
+        - 키워드인 function 으로 시작<br>
+        - 함수 이름 : 임의로 설정. 문자, 숫자, _, $ 을 사용가능<br>
+        - ( )안에 쉼표로 구분되는 매개변수(parameter) : 임의로 설정<br>
+        - { }로 둘러싸인 실행코드<br>
+        2) function Expression<br> 
+        const x = function ( parameter1, parameter2, ...){code to be executed }<br>
+        - 이름없는 함수로 알려짐(anonymous function)<br>
+        - variable(여기서는 x)에 저장되어.. x(,)가 함수 역할을 함<br>
+        <h3>3. parameter(매개변수)와 argument(인수)</h3>
+        1) 매개변수(parameter) : 입력한 인수를 함수로 전달하기(매개)하기 위해 사용하는 변수<br>
+        2) 인수(argument) : 함수가 호출될 때 함수로 전달되는 매개변수의 실제 값<br>
+        <h3>4. return keyword</h3>
+        1) { } 안에 쓰여지는 keyword<br>
+        2) 코드 실행한 실행값을 결과값을 반환한다는 의미<br>
+        3) return문에 다 다르면, 더 이상 실행을 멈춘다<br>
+        4) 예시<br>
+        - function test_func( a , b ) {<br>
+          return a * b ;  }<br>
+        <h3>5. 함수의 활용</h3>
+        1) Night-Day Mode Toggle 에서 실행명령어를 함수화 하여 한번 지정한 후, 여러번 반복해서 사용가능케 함<br>
+
+        <script>
+            document.write(실습페이지)
+        </script>
+
+        <h2>XIII. 객체(Object)</h2>                                 
+        <h3>1. 객체의 필요성</h3>
+        - 중복 제거, 정리 정도의 수단으로서 함수보다도 더 뛰어난 정리 정돈의 수단<br>
+        - 연관된 다양한 변수들과 연관된 함수들의 그룹, 수납상자,Container 라고 생각<br>
+        <h3>2. 객체 쓰기 </h3>
+        1) 객체 생성 - 객체 리터럴(object literal) 사용<br>
+        - 사람이 이해할 수 있는 문자나 약속의 기호를 사용해 값을 생성하는 표기법을 리터럴이라고 하고 객체 리터럴은 객체 생성법을 의미한다.<br>
+        - 객체 리터럴 : objectName = { };<br>
+        - 생성문법<br>
+        const objectName = { key1:value1, key2:value2, key3:value3 }<br>
+        Property = > key:value (property는 key와 value로 구성)<br>
+        <h3>3. 객체 읽기(accessing the object property)</h3>
+        1) accessing opertator로 dot(.)를 이용하는 방법<br>
+        : objectName.key;<br>
+        2) accessing operator로 bracket( [ ] )를 이용하는 방법<br>
+        : objectName["key"];     => 반드시 key 에 "  " 를 붙인다<br>
+        <h3>4. 객체 property 추가 및 삭제</h3>
+        1) 추가<br>
+        - 읽기 와 같은 방식으로 . 이나 [ ] 를 사용한다<br>
+        - objectName.key4="value4"<br>
+        - objectName["key5"] = "value5"<br>
+        2) 삭제<br>
+        - delete objectName.key4;<br>
+        - delete objectName["key4"];<br>
+        3) property 존재 여부 확인<br>
+        - 'key' in objectName; <br>
+        <h3>5. 객체와 반복문</h3>
+        1) for ... in 반복문<br>
+         - for ( let 변수 in objectName )
+         { 샐행할 코드 } ;<br> 
+         => 객체의 Property의 key가 순차적으로 한번식 return되어 {  } 안의 코드 대로 실행된다.<br>                
+        <h3>6. 객체의 Methos와 this</h3>
+        1) 정의  : 객체의 property로 할당된 function을 method라고 한다.<br>
+        2) Method 설정 방법<br>
+         - 객체의 property를 작성하는 자리에 함수를 선언하면 된다<br>
+         - const objectName = { key1:value1, key2:value2, key3:value3,<br>
+         functionName : function( ) { 실행할 코드 }, }<br>
+         - 또 다른 방법 : functionName( ) { 실행할 코드 }<br>
+        3) this : metod 내의 지역 변수로서 객체 자신을 가리킨다.<br>
+         - const objectName = { key1:value1, key2:value2, key3:value3,<br>
+         functionName : function( ) { return <u>objectName</u>.key1 }, }<br>
+         => functionName : function( ) { return <u>this</u>.key1 }, } 으로 바꿔서 표기하면, <u>this</u> 는 이 객체인 objectName을 가리킨다.<br>
+        <h3>7. 객체의 활용</h3>
+        1) Night-Day Mode Toggle 에서 Body를 객체화하여 SetColor 함수와 SetBackgroundColor 함수를 객체의 Method로 지정.<br>
+         => Body.SetColor( )<br>
+         => Body.SetBackgroundColor( )<br>
+        2) Night-Day Mode Toggle 에서 H2를 객체화 하여 SetColor 함수를 객체의 Method로 지정.<br>
+         => H2.SetColor( )<br> 
+
+         <script>
+            document.write(실습페이지)
+        </script>
+
+        <h2>XIV. SCript 코드 파일</h2>
+        <h3>1. JavaScript 코드의 작성 위치</h3>
+            1) HTML 태그의 이벤트 속성에 작성<br>
+            - onclick ="  Javascript 코드   "<br>
+            2) &lt;Script&gt; 태그 내에 작성<br>
+            - &lt;Script&gt; 시작태그와 종료 태그 사이에 코드 작성<br>
+            - &lt;Script&gt; 태그는 웹 문서 어디든 위치할 수 있음<br>
+            3) JavaScript 파일에 작성<br>
+            -  JavaScript 코드를 따로 파일로 작성한 후, 파일명을 *.js로 한다.<br> 
+            - 웹 문서에 링크할 때는 &lt;Script&gt; 태그의 src속성으로 첨부<br>
+            &lt;Script&gt; src =" *.js ">&lt;/Script&gt;<br>
+
+        <h2>XV. Library vs Framework</h2> 
+        <h3>1. Library</h3>
+            1) 소프트웨어를 개발할 때 단순 활용 가능한 도구들의 집합.<br>
+            특정 기능을 모아둔 코드, 함수들의 집합.<br>
+            2) 개발자가 주도성을 가지고 제어를 하며, 능동적으로 라이브러리를 호출해서 사용한다.<br>
+            3) 종류 : jQuery, React.js 등등<br>
+        <h3>2. Framework</h3>
+            1) 소프트웨어 개발 시 필수적인 코드, 알고리즘, DB 연동과 같은 기능을 위해 뼈대(구조)를 제공하며, 이러한 뼈대를 바탕으로 개발자가 살을 붙이는 작업을 한다.<br> 
+            2) 프레임워크 틀에 이미 제어의 흐름이 있어서, 개발자가 들어가서 사용한다는 느낌으로 접근한다.<br> 
+            3) 종류 : Vue.js, Angular, Django, Flask 등<br>
+
+            <h2>XVI. UI vs API</h2> 
+            <h3>1. UI(User Interface)</h3>
+            - 사용자(사람)과 컴퓨터 사이의 의사 소통을 할 수 있도록 하는 상호 작용 시스템. 입력, 출력, 삭제 등과 같은 행위를 위해 필요한 시스템<br>
+            <h3>2. API(Application Programming Interface)</h3>
+            - 응용프로그램(App)에서 사용할 수 있도록, 운영 체제나 프로그래밍 언어가 제공하는 기능을 제어할 수 있게 만든 인터페이스<br>
+
+            <h2>XVII. 기타 참고 개념</h2>
+            <h3>1.  공부는 꾸준히 조금씩 하는 것이지만 프로젝트는 당장 시작해라</h3>
+            <h3>2. 프로젝트를 시작할 시 완벽하게 하려고 하지마라</h3>
+            <h3>3. 기본적인 도구만을 이용해서 프로그래밍의 기본 원칙(순서대로 짜여진 대로 실행되는 것)만 지키면 된다</h3>
+            <h3>4. 문제에 봉착할 때면 조금씩 공부하고 찾아보고 하면서 업그레이드하면 된다</h3>
+            <h3>5. 추천 검색 및 팁</h3>
+             1)  document 객체 공부 더 하기 - 태그 추가, 태그 삭제 등<br>
+                => DOM(Document Object Model)<br>
+             2) window 객체 공부 더 하기 - 웹브라우저 제어 하기 ( 현재 웹페이지 주소 알기, 새창열기, 화면 크기 )<br>
+             3) ajax - 웹페이지 정보 변경하기. 현대적인 웹앱 개발 필수 도구<br>
+             4) cookie - 웹페이지 현재상태 유지 도구. 사용자 개인 서비스 제공<br>
+             5) offline web application - 인터넷 없이 동작하는 웹 개발<br>
+             6) webRTC - 화상통신 웹앱 도구<br>
+             7) speech api - 사용자의 음성 인식, 음성 정보 제공 도구<br>
+             8) webGL - 3차원 그래픽 게임 개발 도구<br>
+             9) webVR - 가상 현실 개발 도구 <br>
+
+            <h3><a href=" https://www.w3schools.com/js/js_reserved.asp " target="_blank">*** JavaScript Reserved Words</a></h3>
+
+
+
+
+
+
+    </div>  
+    
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Test</title>
+
+    <style>
+        .grid {
+            border:none;
+            Display:grid;
+            margin:40px 0px;
+        }
+        #grid1{
+            grid-template-columns : 150px 1fr;
+        }
+        #grid2{
+            grid-template-columns :1fr 1fr;
+        }
+        #grid3{
+            grid-template-columns : 1fr 1fr;
+        }
+        #grid4{
+        grid-template-columns : 150px 1fr 1fr ;
+        }
+        #grid5{
+            grid-template-columns: 1fr 3fr 2fr;
+        }    
+        div{
+            border:1px solid black;
+            padding:10px;
+        }
+
+    </style>
+
+<body>
+<h1>Grid 기본실습</h1>
+    
+    <div class="grid" id="grid1">
+       <div> 그리드 실습1 </div> 
+       <div> grid-template-columns : 150px 1fr 로 설정한 것 </div>
+    </div>
+    
+    <div class="grid" id="grid2">
+       <div> 그리드 실습2 </div> 
+       <div> grid-template-columns : 1fr 1fr 로 설정한 것 </div>
+    </div>
+    
+    <div class="grid" id="grid3">
+       <div> 그리드 실습3 </div> 
+       <div> grid-template-columns : 1fr 1fr 로 설정한 것 </div>
+       <div> contents가 3개이면 2columns을 채우고 2행을 새로 만든다.</div>
+    </div>
+    <div class="grid" id="grid4">
+        <div> 그리드 실습4 </div> 
+        <div> grid-template-columns : 150px 1fr 1fr 로 설정한 것 </div>
+        <div> contents가 3개, 3columns으로 설정한 것.</div>
+     </div>
+     <div class="grid" id="grid5">
+        <div> 그리드 실습5 </div> 
+        <div> grid-template-columns : 1fr 3fr 2fr 로 설정한 것(fr은 비율인것을 알수 있음) </div>
+        <div> contents가 4개, 3columns으로 설정한 것.</div>
+        <div> 4번 content는 2열에 새로 만들어짐</div>
+     </div>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>

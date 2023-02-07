@@ -3,26 +3,164 @@
 <head>
     <title>WEB of Titanomachia</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">  <!-- 이 부분은 external style sheet를 사용하겠다는 말 -->
+<!--<style>
+        body {
+            margin:0px;
+        }
+        /* CSS 주석 문법 */
+        #고유선택자 {color:red;}
+        .예시 {color:blue; font-size:18px;}
+        .선택자 {font-style: italic;} 
+        a {color:green;}
+        h1 {font-size:35px;}
+        h2 {font-size:30px;}
+        h3 {font-size:25px;}
+        h4 {font-size:20px;}  
+        img {width:640px;}
+        #title {
+            font-size:45px;
+            text-align: center;
+            margin:0px;
+            padding:10px;
+            border-bottom : 1px solid gray;
+        }
+        #grid1 {
+            display:grid;
+            grid-template-columns: 180px 1fr;
+        }      
+        #grid1 ol {
+            border-right: 1px solid gray;
+            margin:0px;
+            padding-left: 50px;
+        }
+        #grid1 .article {
+            padding-left:20px;
+        }
+        .list1 {
+            margin:0px;
+            padding:10px;
+            font:25px bold;
+        }
+        @media (max-width:860px) {
+            #grid1 {
+                display : block;
+            }
+            #grid1 ol {
+               border-right: none; 
+            }
+            .list1 {
+                font-size:20px ; 
+            }
+            #title {
+                font-size: 35px;
+                border-bottom : none;
+            }
+            h1 {font-size:30px;}
+            h2 {font-size:25px;}
+            h3 {font-size:20px;}
+            h4 {font-size:18px;}  
+            img {width:100%}
+        } 
+    </style> -->
+    <script src="colors.js"></script>
 </head>
 
 <body>
 
-<h1>WEB of Titanomachia</h1>
-<p>이 웹 사이트는 유투버 생활코딩 을 통해서 학습한 WEB을 만드는 방법을
-정리한 페이지이자, 나의 첫 실습 웹 사이트이다.<br>
-무작정 코딩을 배워보고자 다양한 유튜브 채널을 검색하다가
-우연히 알게된 생활코딩을 통해서 너무나도 쉽게 웹페이지를
-작성할 수 있게 되어 이 자리를 빌어 감사하다는 말씀을 전한다.</p>
-<p>생활코딩님의 유투브 채널의 내용을 거의 그대로 정리한 것이므로
-더 자세한 내용은 아래 링크를 통해서 확인가능하다.</p>
-<p><a href="https://www.youtube.com/@coohde" target="_blank" title="생활코딩">생활코딩(https://www.youtube.com/@coohde)></a></p>
+<h1 id="title">WEB of Titanomachia</h1>
 
-<h1>목차</h1>
-<ol>
-    <h2><a href="WEB1-HTML.html"><li>HTML</li></a></h2>
-    <h2><a href="WEB1-CSS.html"><li>CSS</li></a></h2>
-    <h2><a href="WEB1-Javascript.html"><li>Javascript</li></a></h2>
-</ol>
+<div id="grid1">
+    <ol>
+        <a class="list1" href="index.html" style="color:yellowgreen"><li>Home</li></a>
+        <a class="list1" href="WEB1-HTML.html" style="color:red"><li>HTML</li></a>
+        <a class="list1" href="WEB2-CSS.html" style="color:blue"><li>CSS</li></a>
+        <a class="list1" href="WEB2-Javascript.html" style="color:brown"><li>Javascript</li></a>     
+        
+        <!--<a class="list1" href="index.html"><font color="black"><li>HOME</li></font></a>
+            <a class="list1" href="WEB1-HTML.html"><font color="red"><li>HTML</li></font></a>
+            <a class="list1" href="WEB2-CSS.html"><font color="blue"><li>CSS</li></font></a>
+            <a class="list1" href="WEB2-Javascript.html"><font color="brown"><li>JavaScript</li></font></a>
+        -->
+    </ol>
+    <div class="article" id="Home">
+        
+        <h1>시작하며</h1>
+        <input type="button" value="Night Mode" onclick="DayNightHandler(this)">
+        <p>
+            이 웹 사이트는 유투버 생활코딩 을 통해서 학습한 WEB을 만드는 방법을
+            정리한 페이지이자, 나의 첫 실습 웹 사이트이다.<br>
+            무작정 코딩을 배워보고자 다양한 유튜브 채널을 검색하다가
+            우연히 알게된 생활코딩을 통해서 너무나도 쉽게 웹페이지를
+            작성할 수 있게 되어 이 자리를 빌어 감사하다는 말씀을 전한다.<br>
+            생활코딩님의 유투브 채널의 내용을 거의 그대로 정리한 것이므로
+            더 자세한 내용은 아래 링크를 통해서 확인가능하다.<br>
+            <a href="https://www.youtube.com/@coohde" target="_blank" title="생활코딩">생활코딩(https://www.youtube.com/@coohde)></a>
+        </p>
+<h2>0. 코딩 환경 준비하기</h2>
+<h3>1. Code editor 준비</h3>
+- 시기에 따라서 항상 새로운 tool이 개발되므로 항상 그 당시의 최고의 Editor를 검색해서 사용할 수 있다.<br>
+- 구글에서 best web editor 등으로 검색<br>
+- 2023년 기준으로  : ATOM, Vim, VS Code 등등<br>
+<br><br>
+=> 이전에 다운받아놓은 것이 있는 VS Code로 결정
+<h2>I. Visual Studio Code</h2>
+<h3><a href="https://code.visualstudio.com" target="_blank">1. 다운로드 사이트(https://code.visualstudio.com)</a></h3>
+- 운영체제에 맞는 것으로 다운 및 설치<br>
+- 언어팩 설치해서 한국판으로 설치해도 무방<br>
+<h3>2. 작업 공간(폴더) 만들기</h3>
+ 1) 윈도우 파일탐색기와 같다고 생각하고 적당한 곳에 작업 폴더를 만든다<br>
+ 2 )오류 가능성을 줄이기 위해서 가능하면 상위디렉토리에 만들고, 영문 이름으로 한다<br>
+ 3) New file 만들기  => 확장자는 html로 한다<br>
+ <h3>3. Live server 설치</h3>
+ 1) 반드시 설치할 필요는 없지만, 작업 컴을 서버로 하여, 실시간으로 결과 웹페이지를 확인가능<br>
+ 2) 좌측 그림 메뉴에서 Extensions(확장) => Live server 검색 및 설치 => 우측 하단 Go live 실행<br>
+ <h3>4. 사용 팁 및 장점</h3>
+ 1) 항상 저장하는 습관을 들여라(Ctrl + S)<br>
+ 2) 태그 일부만 쳐도 추천 및 완성을 해준다<br>
+ 3) html5은 html 헤드 양식을 만들어준다<br>
+ 4) head+body  => head 태그 body 태그를 자동으로 만들어준다<br>
+ 5) 태그*n => 태그 n개를 만들어준다<br>
+ 6) tab 키는 한번에 4칸씩 <b>오른쪽</b>으로 이동<br>
+ 7) Shift + Tab은 <b>왼쪽</b>으로 4칸씩 이동<br>
+ 8) 주석은 언어에 따라 다르지만, <b>Ctrl + / </b>는 알아서 주석표시를 해준다. 또 누르면 사라진다 ( 한 줄 주석 단축키 )<br>
+ 9) 블록 주석 단축키 : <b> alt + shift + a </b><br> 
+ 10) 단어 찾기 단축기 : <b>Ctrl + F</b>   => 단어 수정도 가능, 하나 또는 전체<br>
+ 11) 파일 찾기 단축기 : <b>Ctrl + P</b><br>
+ 12) 전체찾기 : 왼쪽 돋보기 메뉴<br>
+ <h3>5. 설정</h3>
+1) File => Preferences => Settings 에서<br>
+2) zoom => 작업 공간 크기 조절<br>
+3) word wrap on => 자동 줄 바꿈<br>
+4) 메뉴또는 명령어 검색 : View => Command Palette<br>
+<h3>6. 실행 </h3>
+1) Run and Debug => F5<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>    
+</div>
+
+
+
+
+<a href="JavaScript:alert('ㅋㅋ')">클릭</a>
+
+
 
 </body>
 </html>

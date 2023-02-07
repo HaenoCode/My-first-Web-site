@@ -1,0 +1,427 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>WEB2-CSS of Titanomachia</title>
+    <link rel="stylesheet" href="style.css">  <!-- 이 부분은 external style sheet를 사용하겠다는 말 -->
+<!--<style>
+        body {
+            margin:0px;
+        }
+        /* CSS 주석 문법 */
+        #고유선택자 {color:red;}
+        .예시 {color:blue; font-size:18px;}
+        .선택자 {font-style: italic;} 
+        a {color:green;}
+        h1 {font-size:35px;}
+        h2 {font-size:30px;}
+        h3 {font-size:25px;}
+        h4 {font-size:20px;}  
+        img {width:640px;}
+        #title {
+            font-size:45px;
+            text-align: center;
+            margin:0px;
+            padding:10px;
+            border-bottom : 1px solid gray;
+        }
+        #grid1 {
+            display:grid;
+            grid-template-columns: 180px 1fr;
+        }      
+        #grid1 ol {
+            border-right: 1px solid gray;
+            margin:0px;
+            padding-left: 50px;
+        }
+        #grid1 .article {
+            padding-left:20px;
+        }
+        .list1 {
+            margin:0px;
+            padding:10px;
+            font:25px bold;
+        }
+        @media (max-width:860px) {
+            #grid1 {
+                display : block;
+            }
+            #grid1 ol {
+               border-right: none; 
+            }
+            .list1 {
+                font-size:20px ; 
+            }
+            #title {
+                font-size: 35px;
+                border-bottom : none;
+            }
+            h1 {font-size:30px;}
+            h2 {font-size:25px;}
+            h3 {font-size:20px;}
+            h4 {font-size:18px;}  
+            img {width:100%}
+        } 
+    </style> -->
+    <script src="colors.js"></script>
+</head>
+
+<body>
+
+<h1 id="title">WEB of Titanomachia</h1>
+
+<div id="grid1">
+    <ol>
+        <a class="list1" href="index.html" style="color:yellowgreen;"><li>Home</li></a>
+        <a class="list1" href="WEB1-HTML.html" style="color:red"><li>HTML</li></a>
+        <a class="list1" href="WEB2-CSS.html" style="color:blue"><li>CSS</li></a>
+        <a class="list1" href="WEB2-Javascript.html" style="color:brown"><li>Javascript</li></a>     
+        
+        <!--<a class="list1" href="index.html"><font color="black"><li>HOME</li></font></a>
+            <a class="list1" href="WEB1-HTML.html"><font color="red"><li>HTML</li></font></a>
+            <a class="list1" href="WEB2-CSS.html"><font color="blue"><li>CSS</li></font></a>
+            <a class="list1" href="WEB2-Javascript.html"><font color="brown"><li>JavaScript</li></font></a>
+        -->
+    </ol>
+
+    <div class="article" id="CSS">
+        
+        <h1>CSS</h1>
+        <input type="button" value="Night Mode" onclick="DayNightHandler(this)">
+
+        <p><a href="https://en.wikipedia.org/wiki/CSS" target="_blank" title="CSS 정의">
+            CSS(Cascading Style Sheets)</a> is a <strong>style sheet language</strong> used for describing
+        the presentation of a document written in a markup language such as
+        <u>HTML</u> or <u>XML</u> (including XML dialects such as SVG, MathML or XHTML).<br>
+        CSS describes <strong>how HTML elements are to be displayed</strong> on screen, paper, or in other media.</p>
+
+        <h2>0. CSS가 등장하기 전 상황</h2>
+        <h3>1. HTML의 한계</h3>
+        <h4>1) 웹의 폭발적인 발전으로 인하여 다양한 요구가 생김</h4>
+        <p> - 글꼴 변경, 문자의 크기, 색상, 정렬, 배경이미지 등<br>
+            - 웹페이지 디자인 개선을 하고자 하는 요구<br>
+            - 다양한 디바이스와 스크린 사이즈에 맞게 display되어야하는 요구<br>
+            - 이러한 요구를 기존 HTML 문법이 해결하지 못함</p>
+        <h4>2) 해결방법</h4>
+        <p> - 기존 HTML에 새로운 문법태그를 추가 : &lt;font&gt; 태그<br>
+            - 완전히 근본적인 해결을 위한 새로운 언어의 개발 : CSS</p>
+        <h3>2.&lt;font&gt;&lt;/font&gt; 태그 - 디자인을 위한 HTML 태그</h3>
+        <h4>1) &lt;font color="red"&gt; 내용 &lt;/font&gt;</h4>
+        <p> <font color="violet">- 이것은 <font color="red">&lt;font&gt;태그</font>를 사용하여 글자의 색깔을 변경하였다</font></p>
+        <h4>2) &lt;font&gt; 태그의 한계</h4>
+        <p> - 웹이 복잡해지면 단순한 태그만으로 표현하기 어려운 점이 많아짐<br>
+            - 다른 태그들(&lt;a&gt;=링크, &lt;h1&gt;=제목 등)과는 달리 태그 자체에 정보가 담겨 있지 않음.<br>
+        검색 엔진에 의해서 검색될 때 정보가 담긴 태그가 매우 중요한 것은 의심의 여지가 없다.<br>
+            - 수정해야할 문장이 기하급수적으로 늘어나면 수작업을 모두 감당하기 어렵다.</p>   
+        <h3>3. CSS는 HTML의 한계를 극복한 새로운 언어이다.</h3>
+        <p>- CSS는 이러한 반복적인 작업을 뛰어 넘게 하는 언어</p>
+        <h3><font color="red"> **별첨 중요 태그**</font></h3>
+        <p>&lt;!--   내용    --&gt;<br>
+        ==> "주석태그" : 꺽쇠 안의 내용은 무시하고 웹에 표시하지 말라는 태그></p>
+        <!--
+            <h3><font color="red"> **별첨 중요 태그**</font></h3>
+        &lt;!--   내용    --&gt;<br>
+        ==> "주석태그" : 꺽쇠 안의 내용은 무시하고 웹에 표시하지 말라는 태그
+        -->
+
+        <h2>I. CSS의 등장</h2>
+        <h3>1. CSS와 Web Browser</h3>
+        <p>- Web browser는 html 언어만을 해석/처리하는 프로그램<br>
+            - 모든 코드를 html로 해석한다<br>
+            - html 문법태그를 이용하여 CSS 문법 임을 알려야 한다</p>
+        <h3>2. 선언 방법</h3>
+        <h4>1) &lt;style&gt;&lt;/style&gt; 태그 - CSS 선언 태그</h4>
+        <p> - &lt;style&gt;태그라는 HTML문법을 사용하여 CSS문법을 선언</p>
+        <h4>2) 사용 방법</h4>
+        <p> - &lt;style&gt; 이 부분에 CSS 문법을 표시 &lt;/style&gt;</p>
+        <p> - &lt;head&gt; 부분에 다음과 같은 명령을 한다.</p>
+        <div class="예시">* 예시</div>
+        <p>&lt;head&gt;<br>
+        &lt;style&gt;<br>
+        a {color:green;} &lt;= 이 문서의 모든 a 태그 내용은 모두 녹색으로 표시하라는 뜻.<br>
+        &lt;/style&gt;<br>
+        &lt;/head&gt;</p>  
+        <h3>3. CSS의 특징</h3>
+        <p> - CSS의 문법은 웹페이지 전체에 영향을 미치기 때문에 일일이 바꾸지 않고
+            한번의 명령으로 웹 전체를 바꿀 수 있다.<br>
+            - 중복의 제거 효과 : 똑같은 태그를 수만번 사용하지 않아도 된다.<br>
+            - 수정 및 관리가 편하다.<br>
+            - 정보의 전달은 HTML, 디자인은 CSS로 특화했다고 볼 수 있다.</p>
+
+        <h2>II. CSS의 기본 문법</h2>
+        <h3>1. &lt;style&gt;&lt;/style&gt; 태그로서의 CSS : Internal CSS</h3>
+        <h4>1) head section에서 사용</h4>
+        <h4>2) &lt;style&gt; a { <strong><u>CSS의 Declaration(효과,선언)</u></strong> } &lt;/style&gt;</h4>
+        <h4>3) <span class="선택자">선택자</span>(Selector) : CSS의 선언의 효과를 받는 element</h4>
+        <p> - 웹페이지에 있는 <span class="선택자">선택자</span>에 해당하는 모든 태그에게 효과 적용</p>
+        <h3>2. 개별 HTML태그의 속성으로서의 style="CSS의 효과" : Inline CSS</h3>
+        <h4>1) 개별 태그의 속성으로 style을 사용할 수 있다.</h4>
+        <h4>2) &lt;h1 style="CSS의 효과"&gt;</h4>
+        <h4>3) 속성의 변수값(argument)이 CSS의 효과가 되는 것</h4>
+        <h4>4) style 변수들 : 변수들끼리는 세미콜론(;)으로 구분</h4>
+        <p> - color:red; => 글자 색을 빨간색<br>
+            - text-decoration:none; => 글자 꾸미기 없음<br>
+            - text-decoration:underline; => 글자에 밑줄 표시</p>
+        <div class="예시">* 예시</div> 
+        <h4 style="color:orange; text-decoration:underline">이 문장은 style 속성을 이용한 CSS 효과입니다</h4>
+        <h4><font color="orange"><u>이 문장은 HTML 태그를 이용한 것입니다.</u></font></h4>
+
+        <h2>III. CSS의 기본 구조</h2>
+        <h3>1. CSS 문법의 기본구조(syntax)</h3>
+        <img src="CSS_fig1.jpg">
+        <h3>2. 앞으로 공부할 것들</h3>
+        <h4>1) Property(속성) 종류 - 다양한 선언의 효과 알아보기</h4> 
+        <h4>2) Selector(<span class="선택자">선택자</span>) 종류 - 특정하게 지정하는 방법 알아보기</h4>
+
+        <h2>IV. CSS의 Property 스스로 알아내기</h2>
+        <p> - Prorety를 검색을 통해서 스스로 알아내보자</p>
+        <h3><a href="https://www.w3schools.com/cssref/pr_font_font-size.php" target="_blank" title="font-size">1. 글자 크기 property 및 Value</a></h3> 
+        <h4>1) Property : font-size
+        <h4>2) Value </h4>
+        <img src="CSS_fig2.jpg">
+        <h3><a href="https://www.w3schools.com/cssref/pr_text_text-align.php" target="_blank" title="text-align">2. 문장 정렬 property 및 Value</a></h3> 
+        <h4>1) Property : text-align
+        <h4>2) Value </h4>
+        <img src="CSS_fig3.jpg">
+        <div class="예시">* 예시</div> 
+        <p style="font-size:15; text-align:center;">이 문장은 font-size : 15, text-align : center를 적용한 문장입니다</p>
+
+        <h2>V. CSS Selectors</h2>
+        <h3>1. Selectors(<span class="선택자">선택자</span>)의 종류 및 우선 순위</h3>
+        <h4>1) 3가지 중요한 Selector :  Id, class, tag(element)</h4>
+        <h4>2) 우선 순위 : Id > class > element</h4>
+        <p> - 같은 순위라면 가장 최근에(마지막에) 표시한 selector가 우선.</p>
+        <h3>2. ID <span class="선택자">선택자</span></h3>
+        <h4>1) 의미 : Identification(특정한 것을 지칭)</h4>
+        <h4>2) ID 선택자는 unique한 것만을 지정하기 때문에 같은 id내용값은 단 한번만 쓸수 있다.</h4>
+        <h4>3) id는 html 문법에서 모든 태그의 attribute(속성)이다. id의 내용값은 argument에 해당된다.</h4>
+        <h4>4) 표시법 : &lt;h2 id="고유값1"&gt; 제목2 &lt;/h2&gt;</h4>
+        <h3>3. CLASS <span class="선택자">선택자</span></h3>
+        <h4>1) 의미 : 클래스, 적당한 그룹을 의미한다.</h4>
+        <h4>2) id는 고유한 1개를 의미하지만, class는 1개의 그룹을 의미한다.</h4>
+        <h4>3) class는 html문법에서 모든 태그의 attribute로 쓰인다. id와 마찬가지이다.</h4>
+        <h4>4) 표시법 : &lt;h3 class="그룹이름1"&gt; 내용 &lt;/h3&gt;</h4>
+        <h3>4. Elements(tag) <span class="선택자">선택자</span></h3>
+        <h4>1) 일반적인 html 문법의 tag을 의미한다.</h4>
+        <h3>5. CSS 적용법</h3>
+        <h4>1) &lt;head&gt; 부분 있는 CSS 문법 부분(&lt;style&gt;)에서 사용한다.</h4>
+        <h4>2) id 지정법 : 고유값 앞에 # 표시를 한다.</h4>
+        <h4>3) class 지정법 : 그룹이름 앞에 마침표(.)를 표시한다.</h4>
+        <h4>4) 태그 지정법 : 꺽쇠 없이 태그 이름을 그대로 표시한다.</h4>    
+        <h4 style="color:red"> *** 중요 *** 선택자의 값에 첫글자는 숫자는 절대로 안된다</h4>  
+
+        <h2>VI.CSS Selectors의 사용</h2>
+        <h3>1. CSS Selector의 지정</h3>
+        <h4>1) CSS는 기본적으로 다음과 같은 명령구조를 가지고 있다.</h4>
+        - Selector {Property:Value;} 
+        <h4>2) CSS의 효과를 나오는 Selector를 반드시 지정해야함.</h4>
+        <h4>3) Selector는 태그 자체, 또는 태그 내의 속성(id, class)을 지정한다</h4>
+        <h4>4) 태그가 없는 경우는 아무 의미 없는 태그를 사용한다. CSS를 지정하기 위한 태그</h4> 
+        <p> - &lt;div&gt; , &lt;span&gt;</p>
+        <div class="예시">* 예시</div>  
+        <p> &lt;div class="class1" id="id1"&gt; 내용 &lt;div&gt;<br>
+            &lt;span class="class1" id="id2"&gt; 내용 &lt;span&gt;</p>
+
+        <h3>2. CSS Selector 사용(선언)</h3>
+        <h4>1) 기본적으로 &lt;head&gt;&lt;/head&gt; 내에서 사용</h4>
+        <h4>2) &lt;style&gt;&lt;/style&gt; => CSS 문법 사용 가능 태그</h4>
+        <div class="예시">* 예시</div> 
+        <p>&lt;head&gt;<br>
+        &lt;style&gt;<br>
+        #id1 { color: red;}<br>
+        .class2 { color:blue;}<br>
+        h1 { color: green;}<br>
+        &lt;/style&gt;<br>
+        &lt;/head&gt;
+        </p>
+        <h3><a href="https://www.w3schools.com/cssref/css_selectors.php" target="_blank">3. Selector의 종류 및 사용법</a></h3>
+        <img src="CSS_fig4.jpg">
+        <h3>4. Selector 실습예제</h3>
+        <h4>1) 태그 <span class="선택자">선택자</span></h4>
+        <p>- 링크 태그인 &lt;a&gt;는 전부 글자 색을 green으로 표시하였다
+        - 제목 태그인 &lt;h1~h4&gt;는 font-size를 달리 하였다
+        - 이미지 태그인 &lt;img&gt;는 width:640px로 정했다
+        </p>
+        <h4>2) Class <span class="선택자">선택자</span></h4>
+        <p>- * 예시 라는 문구는 모두 &lt;div class="예시"&gt; 태그와 class는 예시 로 명명.<br>
+            .예시 {color:blue; font-size:18px;}로 CSS 선언을 하였다
+            <div class="예시">* 예시</div></p>
+        <p>- <span class="선택자">선택자</span>라는 글자는 모두 &lt;span class="<span class="선택자">선택자</span>"&gt; 태그와 
+            class는 <span class="선택자">선택자</span> 로 명명.<br>
+            - .<span class="선택자">선택자</span> {font-style: italic;}로 CSS 선언을 하였다<br>
+            - <span class="선택자">선택자</span>  &lt;===== class=선택자</p>
+        <h4>3) ID <span class="선택자">선택자</h4>
+        <p>- 특별히 이 문장에 있는 <span class="선택자" id="고유선택자">선택자</span>는 
+            class는 선택자, id는 고유선택자로 명명.<br>
+            - #고유선택자 {color:red;}로 선언을 하였다<br>
+            - <span class="선택자" id="고유선택자">선택자</span> &lt;===== id=고유선택자, class=선택자</p>
+        <h4>4) 실제 &lt;head&gt;&lt;/head&gt;에 표기한 내용</h4>    
+        <p>&lt;style&gt;<br>
+            #고유선택자 {color:red;}<br>
+            .예시 {color:blue; font-size:18px;}<br>
+            .선택자 {font-style: italic;}<br> 
+            a {color:green;}<br>
+            h1 {font-size:45px;}<br>
+            h2 {font-size:30px;}<br>
+            h3 {font-size:25px;}<br>
+            h4 {font-size:20px;}<br>  
+            img {width:640px;}<br>
+        &lt;/style&gt;</p>
+
+        <h2>VII. 박스 모델</h2>
+        <p>- 모든 HTML 요소(element)는 박스 모양으로 구성되어 있다.</p>
+        <h3>1. 박스 모델 구성 요소</h3>
+        <h4>1) content(내용) : 텍스트나 이미지가 들어있는 박스의 실질적인 내용</h4>
+        <p>  - width(너비)와 height(높이) 속성의 영향을 받음</p>
+        <h4>2) padding(패딩) : 내용과 테두리 사이의 간격. 눈에 보이지 않음</h4>
+        <p> - color는 바꿀수 없음.  간격 size만 조절</p>
+        <h4>3) border(테두리) : 내용과 패딩 주변을 감싸는 테두리</h4>
+        <p>  - 테두리 두께, 색깔, 선의 종류</p> 
+        <h4>4) margin(마진) : 이웃하는 요소(element)와 테두리 사이의 간격</h4>
+        <p> - 간격 size만 조절</p>
+        <h3>2. 박스 모델 도식</h3>
+        <h4>1) 웹페이지 개발자도구</h4>
+        <p>- 웹페이지 우클릭 ==> 검사 메뉴 에서 확인 가능</p>
+        <img src="CSS_fig5.jpg">
+
+        <h2>VIII. Elements의 Display</h2>
+        <p>- CSS의 Display property의 Value값 중 가장 기본이 되는 것에는 inline, block, inline-block이 있다.</p>
+        <h3>1. inline element</h3>
+        <p> : 전후 줄바꿈이 없이 한 줄에 다른 element와 나란히 배치되는 element</p>
+        <p> - &lt;span&gt;, &lt;a&gt;, &lt;em&gt; 태그 등<br>
+        - width, height 속성은 무시<br>
+        - border 속성은 반영<br> 
+        - padding, margin 속성은 좌우 간격만 반영되며, 상하 간격은 무시<br></p>
+        <h3>2. Block &lt;lement</h3>
+        <p> : 전후 줄바꿈이 되어 혼자서 한 줄을 차지한다.</p>
+        <p> - &lt;div&gt;, &lt;p&gt;, &lt;h1~h4&gt; 태그 등<br>
+            - width, height, padding, border, margin 속성 반영<br></p>
+        <h3>3. inline-block element</h3>
+        <p> : 전후 줄바꿈 없음. 그외 block 속성 반영<br>
+        <p> - &lt;button&gt;, &lt;input&gt;, &lt;select&gt; 태그 등<br>
+            - width, height, padding, border, margin 속성 반영<br>
+            - display : inline-block 이라고 명시적으로 지정해야만 함.<br></p>
+
+        <div class="예시">* 예시</div> 
+            &lt;style&gt;
+        <p>div { <br>
+                background-color:coral;<br>
+                width:400px;<br>
+                height:50px;<br>
+                padding:40px;<br>
+                border:10px solid maroon;<br>
+                margin:30px;<br>
+            } <br> 
+            &lt;/style&gt;<br>
+            </p>
+        <p>* Diaplay 속성값<br> 
+            1) display:none   => 내용이 모두 화면에서 나타나지 않음<br>
+            2) display:inline  => inline element로 바꿈<br>
+            3) display:block => block element로 바꿈<br>
+        <h3>4. 실습 예제</h3>
+        <p>  박스 모델과 Display 실습은 <a href="Box test.html" target="_blank">박스 모델 실습</a> 따로 만들었습니다.</p>
+
+        <h2>IX. 박스 모델 이용하여 구획 만들기</h2>
+
+        <h2>X. 그리드</h2>
+        <h3>1. grid : Display 속성값의 하나로 그리드(격자) 를 만드는데 사용</h3>
+        <h4>1) 단독으로 사용할 수 없다.</h4>
+        <h4>2) 먼저 display : grid 라고 선언한다.</h4>
+        <p>  - element를 block level grid container로 보여준다.</p>
+        <h4>3) 하위 속성이 존재한다</h4>
+        <h3>2. Grid 속성</h3>
+        <h4>1) grid-template-columns : 특정한 개수의 열을 만들 때 사용</h4>
+        <h4>2) grid-template-rows : 특정한 개수의 행을 만들 때 사용</h4>
+        <h4>3) grid-template-areas : 특정한 지역을 설정할 때 사용</h4>
+        <h4>4) grid-auto-columns : 특정한 size의 열을 만들 때 사용</h4>
+        <h4>5) grid-auto-rows : 특정한 size의 행을 만들 때 사용</h4>
+        <h4>6) grid-auto-flow : 내용을 배치하는 방법을 설정</h4>
+        <h3>3. 사용법</h3>
+        <h4>1) 먼저 태그가 없는 contents는 의미 없는 태그로 감싼다.</h4>
+        <p>  
+            - &lt;div&gt; contents1  &lt;/div&gt;  &lt;div&gt; contents2 &lt;/div&gt;<br> 
+        *  &lt;div&gt;는 의미없는 태그로서 block element로 만들어준다<br>
+        *  &lt;span&gt;은 의미없는 태그로서 inline element로 만들어준다<br>
+        </p>
+        <h4>2) 2개의 contents를 감싸는 부모 태그가 필요하다.</h4>
+        <h4>3) 부모태그에 id값을 부여한다.</h4>
+        <h4>4) display 속성에 grid를 선언한다</h4>
+        <h4>5) grid-template columns : size1 size2</h4>
+        <div class="예시">* 예시</div>
+        <p>
+            &lt;style&gt;<br>
+            #grid { display:grid; grid-template-columns:150px 1fr; }<br>
+            &lt;/style&gt;<br>
+            &lt;body&gt;<br>
+            &lt;div id="grid"&gt;<br>
+            &lt;div&gt; contents1  &lt;/div&gt;  &lt;div&gt; contents2<br>
+            &lt;/div&gt;<br>
+            &lt;/body&gt;
+        </p>
+        <h3>4. 실습 예제</h3>
+        <p> Grid 실습은 <a href="grid test.html" target="_blank">그리드 실습</a> 따로 만들었습니다.</p>
+
+        <h2>XI.그리드 이용하여 구획 만들기</h2>
+
+        <h2>XII. 반응형 웹(Respossive Web)</h2>
+        <p> - 디바이스의 디스플레이 종류에 반응하여 적절히 UI가 유기적으로 배치되도록 설계된 웹</p>
+        <h3>1. Media Query</h3> 
+        <p> - 특정한 조건에서 CSS 속성을 부여하는 CSS 기술</p>
+        <h3>2. 부여 속성</h3>
+        <p> - width and height of the viewport<br>
+            - width and height of the device<br>
+            - orientation<br>
+            - resolution<br>
+        </p>
+        <h3> 3. 사용법</h3>
+        <h4>1) CSS 영역(&lt;style&gt;)에서 선언<h4>
+        <h4>2) 문법(syntax)<h4>
+        <p> - @media(조건) {CSS-code}<p>
+        <div class="예시">* 예시</div>
+        <p> @media (max-width:600px) {<br>
+            div {<br>
+            display : none;<br>
+            }<br>
+        </p>
+        <h3>4. 실습 예제</h3>
+        <p> Media Query 실습은 <a href="mediaquery test.html" target=_blank>미디어쿼리 실습</a> 따로 만들었습니다.</p>
+
+        <h2>XIII. 미디어 쿼리 써먹기</h2>
+
+        <h2>IX. CSS코드의 재사용</h2>
+        <h3>1. CSS의 종류</h3>
+        <h4>1) inline CSS</h4> 
+        <p>  - HTML 태그의 style속성으로 사용 ( &lt;h1 style="속성값"&gt; )</p>
+        <h4>2) Internal CSS</h4>
+        <p>  - head section에 &lt;style&gt; &lt;/style&gt; 사용</p>
+        <h4>3) External CSS</h4>
+        <p>  - 외부 style sheet 문서( *.CSS)를 이용하는 것</p>
+        <h3>2. &lt;link&gt; 태그</h3>
+        <p>  -  현재 문서(the current document)와 외부 문서(external resource)와의 관계를 정의하는 HTML 문법 태그</p>
+        <h4>1) 사용법</h4>
+        <p> - head section에서 서술</p> 
+        <p> - &lt;link rel="stylesheet" href=*.CSS"&gt;</p>
+        <h4><a href="https://www.w3schools.com/tags/tag_link.asp" target="_blank">2) link 태그의 Attributes</a></h4>
+        <img src="CSS_fig6.jpg">
+
+
+
+
+
+
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
